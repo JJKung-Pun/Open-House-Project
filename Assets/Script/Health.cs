@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerHP : MonoBehaviour
+public class Health : MonoBehaviour
 {
     public int maxHealth = 100; 
     public int currentHealth;
@@ -22,12 +22,9 @@ public class PlayerHP : MonoBehaviour
 
     }
 
-    public void TakeDamage(int damage)
+    public void Damage(int damageAmount)
     {
-        if (currentHealth <= 0) return;
-
-        currentHealth -= damage;
-        currentHealth = Mathf.Max(currentHealth, 0);
+        currentHealth -= damageAmount;
 
         if (healthBar != null)
         {
