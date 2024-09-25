@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
 
     public Slider staminaBar;
 
+    private bool facingRight = true;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -29,13 +31,13 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        HandleMovement();
-        HandleSprinting();
-        HandleDashing();
+        Move();
+        Sprint();
+        Dash();
         UpdateStaminaBar(); 
     }
 
-    void HandleMovement()
+    void Move()
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
@@ -45,6 +47,11 @@ public class PlayerController : MonoBehaviour
         {
             float speed = isDashing ? dashSpeed : (Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : walkSpeed);
             rb.velocity = movement.normalized * speed;
+
+            if ((movement.x > 0 && !facingRight) || (movement.x < 0 && facingRight))
+            {
+                Flip();
+            }
         }
         else
         {
@@ -52,7 +59,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void HandleSprinting()
+    void Sprint()
     {
         if (Input.GetKey(KeyCode.LeftShift))
         {
@@ -69,7 +76,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void HandleDashing()
+    void Dash()
     {
         if (Input.GetKeyDown(KeyCode.Space) && !isDashing && dashTime <= 0)
         {
@@ -98,5 +105,10 @@ public class PlayerController : MonoBehaviour
             staminaBar.value = stamina; 
         }
     }
-}
 
+    private void Flip()
+    {
+        facingRight = !facingRight;
+        transform.Rotate(0, 180, 0);
+    }
+}
