@@ -50,4 +50,19 @@ public class PlayerHP : MonoBehaviour
         }
     }
 
+    public void TakeDamage(int amount)
+    {
+        currentHealth -= amount;
+        
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+
+        healthBar.value = currentHealth;
+
+        Debug.Log("Player took " + amount + " damage. Current health: " + currentHealth);
+
+        if (currentHealth == 0)
+        {
+            Die.gameObject.SetActive(true);
+        }
+    }
 }

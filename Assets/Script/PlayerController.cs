@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        
         Move();
         Sprint();
         Dash();
