@@ -1,0 +1,3185 @@
+fileFormatVersion: 2
+guid: 61910420b65c4684bbecd47a8ec4c817
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_0
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 937
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2dbf4d199da62243b23ff190467d007
+      internalID: -1993249431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_1
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 937
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07040e13d33ab474ca812f5caa1202f3
+      internalID: 319622763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_2
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 937
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5297c7cf499a082479013bde38975958
+      internalID: 1543882157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_3
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 937
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df051a4834a329b459482b51e723d981
+      internalID: -1731211035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_4
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 937
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d16646dd96e72844ca017b68aee0e355
+      internalID: 1211056934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_5
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 937
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 022db2c88686a654ba5149fc6ee02729
+      internalID: -1119498815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_6
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 937
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d7ada74dd6da76439ff204cfbf752bf
+      internalID: -1828639280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_7
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 937
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 560a5262716ce3942bfefda7aeb46611
+      internalID: -1676809226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_8
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 937
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8df01478a69447248a77d9f1bf4f7bc6
+      internalID: -1958903519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_9
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 937
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e8d5aaf7b59d14498cdc5471b3a2e18
+      internalID: -1048814234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_10
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 937
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8a417b24a1458a4e8ee32246d20f2d1
+      internalID: -1959165374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_11
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 937
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cface12ca562a6a439574828e1cbe699
+      internalID: 745283383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_12
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 937
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a6f1d51c86843d4baa209e5f80ca197
+      internalID: -2121814737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_13
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 882
+        width: 30
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67bd8863fedb4a84fbeb6bfcb76d43be
+      internalID: -1651385343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_14
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 882
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9d2fa68b7a95e0429106bc758aefde9
+      internalID: 1850402925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_15
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 882
+        width: 30
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c149b96481514024bae96631d986dd9f
+      internalID: -668987106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_16
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 882
+        width: 30
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 033eef01b6fa488429d3f999049befb6
+      internalID: -93079511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_17
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 882
+        width: 30
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6265ff0f6b6f4442abc35f8ccbbb40e
+      internalID: 260815312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_18
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 882
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07504b002cc744b49af64ed878150c26
+      internalID: -448996608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_19
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 882
+        width: 30
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6137dcc0508e5ca4cafdeac4d941c996
+      internalID: -1931861046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_20
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 882
+        width: 30
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20b4f89cdeea56440a20bdc8c88c5d65
+      internalID: 143849123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_21
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 828
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4dfaa789bedf1c4e88072f4e815daeb
+      internalID: -1921183298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_22
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 828
+        width: 28
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38f047d868fcb6c4ca765fe6ee392704
+      internalID: 203406691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_23
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 828
+        width: 30
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb8790c5aaa78a6429b1aa4a4d3e213a
+      internalID: -1977900353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_24
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 828
+        width: 28
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab4a45b6abd9ef048b2f7fe86bfe688c
+      internalID: 304507878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_25
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 828
+        width: 31
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2b0f3911f7e6ff4f9b2fe477e28b7ed
+      internalID: -1129842151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_26
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 828
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec27d2787fdf13b47aa5cfe7f6b31c92
+      internalID: 499400397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_27
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 776
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74e058dc25d03c547afa9197eb9535bc
+      internalID: 2129440468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_28
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 776
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a27bd294c082db14ba9de434e67b5b71
+      internalID: -408824521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_29
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 776
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 401dbd8f321e4b344aa74daeaeca29ff
+      internalID: 1135271593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_30
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 776
+        width: 29
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5df4ba4da4dd3446b046bf074106d67
+      internalID: -1047735752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_31
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 776
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37a3b266ec40ef941a3209fd166187ec
+      internalID: -1900764683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_32
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 776
+        width: 27
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d89fa2f45c9397045857ca8f6ca78d77
+      internalID: 867383523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_33
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 776
+        width: 26
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a602f3253a8ec849b634de6e26ff929
+      internalID: -609559140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_34
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 776
+        width: 21
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fafebbb917f7ead48a363b38fb64cc16
+      internalID: 48850917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_35
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 776
+        width: 27
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad3d26c283359104e9667a846feba7a1
+      internalID: -1387533702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_36
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 776
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a869bb9af5c96d84c92951b904ce2f84
+      internalID: -1133793887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_37
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 718
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb5903073842809448098a69312dcd04
+      internalID: -111727881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_38
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 718
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4b26c4714ad5254cb82535161ea4ec8
+      internalID: 1550925975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_39
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 718
+        width: 32
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c2aa00065b48244f9b115605ee2703c
+      internalID: -86687266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_40
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 718
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b833bed49186ea42bf8107aaae0d977
+      internalID: 2067554973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_41
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 718
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd1ca83709f4df740b1c119e1fb01854
+      internalID: -946258906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_42
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 718
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dbd1a042e8b4c54db13248cbc9d99a1
+      internalID: 1652404713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_43
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 718
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f7998d928a250a4782e47e4480b2d17
+      internalID: -927465781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_44
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 718
+        width: 32
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f32a3b378bdeb34a89ea06e5e872116
+      internalID: -1375016137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_45
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 718
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73819d323b73d9e40a5a2e7935306cbf
+      internalID: 1132151435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_46
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 718
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1c2b402abdd59643b07a9f15c4991c0
+      internalID: 634936954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_47
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 718
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6aabdddef0abbf4594d95575220e779
+      internalID: 1025706112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_48
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 718
+        width: 32
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aea97ddc0a0b5f449831c32489e95633
+      internalID: 1824307887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_49
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 669
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52703610ea389e34eb3fa9eb67fe0cde
+      internalID: 2091341679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_50
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 669
+        width: 37
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79ba1e51a99a5a447835717209da40a0
+      internalID: 237669666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_51
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 669
+        width: 39
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eddd3bfee669ed4ca4e4cd8fba381ad
+      internalID: 1640335112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_52
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 675
+        width: 41
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaa341e972ca37846ad3d1e0573faf7a
+      internalID: -175999574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_53
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 669
+        width: 44
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af4567330f3da41479c976726f477131
+      internalID: -186331361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_54
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 669
+        width: 44
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 652d024996f44384097533fb4e57c3a5
+      internalID: 1342781563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_55
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 669
+        width: 38
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2586bd22c3b8ee34eadfed0fd0b4219a
+      internalID: -351994627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_56
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 669
+        width: 38
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffd78869166f3514abd743d35a9e5b82
+      internalID: -20775499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_57
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 675
+        width: 40
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88a2fc26050f1a149966bd66da8576dd
+      internalID: -1924518176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_58
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 669
+        width: 37
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6da708790ba124a40aff3e4ad58ccd88
+      internalID: 753855971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_59
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 626
+        width: 37
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f842168a4ceed0545bb686588d9403cf
+      internalID: -1550114482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_60
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 627
+        width: 50
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c129c42a1b9cdc41aba8ea2828fb874
+      internalID: 1123409812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_61
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 626
+        width: 42
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3efd37f8e8b785045956a36b42b9431e
+      internalID: -716915900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_62
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 626
+        width: 34
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 757727239af57fb47a8bcfc6a6965a37
+      internalID: 280327475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_63
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 626
+        width: 44
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64b2abdc20f0a474fb0cce647df9176a
+      internalID: -119379440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_64
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 626
+        width: 41
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4de0b339ba49e344ab40882da25a93e
+      internalID: -891977463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_65
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 626
+        width: 34
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42bd3430f3cf335488d5ce3f918ec038
+      internalID: 334198050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_66
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 576
+        width: 50
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9ae53ea8ffbb324ea8ea357b7d4e5a5
+      internalID: 490017753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_67
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 575
+        width: 42
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca9cd5949e713564cab719b836e12883
+      internalID: 1451651002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_68
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 573
+        width: 35
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 130377a96c95e8443a4789f49df1a453
+      internalID: -2041176587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_69
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 565
+        width: 28
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0927aa15d543d84b8b513e1ee215e4a
+      internalID: 288447615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_70
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 578
+        width: 35
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 384f4af406afe604d82d14db052bef39
+      internalID: 2082030542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_71
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 573
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a356aa91a3a441c4ebcd2daa7bc1f02a
+      internalID: 624789033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_72
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 573
+        width: 35
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de29a6bb125670748a1a8d1014426143
+      internalID: 279710433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_73
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 579
+        width: 47
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4bc42bff844b88459e7566513457c84
+      internalID: -97238787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_74
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 570
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72d2230ee9fc7764089055e7762c657b
+      internalID: 163411914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_75
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 568
+        width: 39
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a8a3381eb15d604a901b5ca8461ef2e
+      internalID: -912466949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_76
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 516
+        width: 29
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c62d49fb50b77043b68db8f239b6776
+      internalID: 2081214414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_77
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 517
+        width: 25
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd61ed48df76a2a47871d6febb81347b
+      internalID: -649503578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_78
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 462
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6eb8b86ac1f14644c9679174ed40cc7a
+      internalID: 1965953600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_79
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 462
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7a152462d71c424faadf26244446779
+      internalID: -412089653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_80
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 462
+        width: 35
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc47e19ef73d91e409d8077b1fbceaaa
+      internalID: -1070824633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_81
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 462
+        width: 40
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ee458474a437f946911b20be6de0a9c
+      internalID: -1934030929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_82
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 415
+        width: 41
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7bdb64f2b168244d9b7e5426ce469ab
+      internalID: -123843009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_83
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 415
+        width: 42
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47a61c699bd7ede4b83ab761621b97bb
+      internalID: -866885076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_84
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 415
+        width: 39
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f75d5998a7e6254da7af625da10ff62
+      internalID: -242694406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_85
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 415
+        width: 39
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb6f67bb39f90d74c9be48f3350d9bce
+      internalID: -186110438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_86
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 415
+        width: 41
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc03b8b5ceda989479a8347eae09ed2a
+      internalID: -1636039602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_87
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 415
+        width: 41
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b99980970fc0b540b1d8c2a1688dcc0
+      internalID: 1121910785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_88
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 415
+        width: 84
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 733bfbac48325e845a57220531c2c6ff
+      internalID: -988949891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_89
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 415
+        width: 42
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b295fe17d8b2da4da4ef5548911be4f
+      internalID: -894026789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_90
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 415
+        width: 40
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a9ef746699f3684e9402e3488fa8b8d
+      internalID: -448903768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_91
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 367
+        width: 33
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3ac592a4481c9e4c9732d1c6aa2904f
+      internalID: 1299817889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_92
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 367
+        width: 35
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d169c7cea45b37e4d90016059cb9fbba
+      internalID: -63706037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_93
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 367
+        width: 36
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57d535578c0dfdf43b8b057db4a47f21
+      internalID: 239803157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_94
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 310
+        width: 96
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b4559b004762d046aae99867bde470e
+      internalID: 1905815390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_95
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 310
+        width: 32
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e944260ccf50e1488ac721117dd629e
+      internalID: -749638314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_96
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 310
+        width: 36
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f7585e9313c2bd498bc21ca67cf70e9
+      internalID: -1715054043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_97
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 310
+        width: 36
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84c290d6f9ef23944b71d89600845573
+      internalID: -477708173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_98
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 310
+        width: 36
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9d316f5232164b409138f40dec6a6ff
+      internalID: -455949250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_99
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 310
+        width: 36
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b8b3ceef7bc24a44a29d158eaf62247
+      internalID: -621189507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_100
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 259
+        width: 44
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ec1bc4324289704e9add6063c484015
+      internalID: -632765363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_101
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 259
+        width: 44
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9b22ce709ddfd143b0c67cf439ed1d0
+      internalID: 787709537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_102
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 259
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de68802ba8897574c907fe52c8990e8b
+      internalID: 2096756211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_103
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 259
+        width: 28
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a79429f3af2a0e742b1a38a457d933a8
+      internalID: -1016482649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_104
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 259
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a4955333cbb05a48936f9c08fff7976
+      internalID: 1008226667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_105
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 259
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 445b70109abdeb14ab76fd1c5cd177a9
+      internalID: 677111138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_106
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 194
+        width: 41
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10b7335b7ffc1f046a500f6e221e6748
+      internalID: -1946007642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_107
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 194
+        width: 58
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 044e3768f25f77c42b290ad2103a3677
+      internalID: -1416460324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_108
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 195
+        width: 47
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7628d3fc61beef7438c7f2997b1b1b97
+      internalID: 1161546485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_109
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 195
+        width: 47
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 098d10ce18e32a14187b07847cf3263f
+      internalID: -670402517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_110
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 195
+        width: 47
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: def9d8951024b0d4cacf09ff78534ba1
+      internalID: -625259789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_111
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 195
+        width: 47
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42dcfe9b6441c8844984ae7080abf8bd
+      internalID: -1547745810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_112
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 159
+        width: 85
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1e9dd6d6d81e534fa15486fd62cfd7d
+      internalID: 1653344946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_113
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 150
+        width: 41
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 586fc5cbfbf573d47afbc0022502d270
+      internalID: 83998623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_114
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 152
+        width: 21
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaee80d0926da7840891086c99346c1a
+      internalID: -749643186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_115
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 150
+        width: 12
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a52fc9f0e0105a8409d467868cbd3f97
+      internalID: 123569028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_116
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 98
+        width: 32
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a2611703870aa441a2a871926fdeaf7
+      internalID: -412177559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_117
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 105
+        width: 35
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7ef2eeb5095e2543aaf0d4435c79d45
+      internalID: -1788953445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_118
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 104
+        width: 41
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9b1de68ee6884142b20c312803813c1
+      internalID: -533055686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_119
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 104
+        width: 41
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1704d52f743dec34e82dedc2a228ce72
+      internalID: 1977385126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_120
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 104
+        width: 41
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d43f26983f8726c42aa5cc7614fe86cf
+      internalID: -968899343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_121
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 104
+        width: 41
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6a17910aab8c1644ba53bb373efe868
+      internalID: -436519717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_122
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 104
+        width: 40
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7f2f0f66282d8d498f247c66d69499a
+      internalID: -1562378908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_123
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 104
+        width: 65
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99b6af5d00ba01a4d9eb6f5532d69050
+      internalID: 1107817679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_124
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 104
+        width: 57
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a7229c0f1610d542ab66dfca46b731e
+      internalID: -1961670338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_125
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 104
+        width: 55
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 066df7891e594a04293759de24cf962f
+      internalID: -589082799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_126
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 104
+        width: 56
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4382bc269025cad43a3c375c5e4fd693
+      internalID: 981673735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_127
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 104
+        width: 55
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 750cb4197e7ee564c8a19f601245937b
+      internalID: 1100066289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_128
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 58
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe20afe560430234bb74e0b3014f9e98
+      internalID: -1379225726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_129
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 56
+        width: 40
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30c42b316cffda749b7a1d6c3d83076b
+      internalID: 2052441623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_130
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 55
+        width: 33
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9aab8085e2271fc48ac23635feb2b52d
+      internalID: -1531960956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_131
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 53
+        width: 36
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 261c961cfe5624c4482c56d8ec7137bf
+      internalID: 1677644895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_132
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 53
+        width: 36
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4763fbaac42c21a40b6ce9119be945b8
+      internalID: 1327567201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_133
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 56
+        width: 28
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0beb991c5efc894f9b9ed01a0e23716
+      internalID: -1598411748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_134
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 58
+        width: 38
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 700c86783745c004a82502938619c742
+      internalID: -916985230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_135
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 56
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24465447e2e741e44a13790ffe6db5fd
+      internalID: -1062561873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_136
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 53
+        width: 36
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b42892b9ec00407419c1d0b9e01757ab
+      internalID: 1728420578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_137
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 53
+        width: 36
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bc4af73a1c187149b226413c5885d02
+      internalID: -345986097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CharlieShatterfateTest1_138
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 15
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1afb0df05d6a5674b98a9d9694e1b83e
+      internalID: 1983238510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      CharlieShatterfateTest1_0: -1993249431
+      CharlieShatterfateTest1_1: 319622763
+      CharlieShatterfateTest1_10: -1959165374
+      CharlieShatterfateTest1_100: -632765363
+      CharlieShatterfateTest1_101: 787709537
+      CharlieShatterfateTest1_102: 2096756211
+      CharlieShatterfateTest1_103: -1016482649
+      CharlieShatterfateTest1_104: 1008226667
+      CharlieShatterfateTest1_105: 677111138
+      CharlieShatterfateTest1_106: -1946007642
+      CharlieShatterfateTest1_107: -1416460324
+      CharlieShatterfateTest1_108: 1161546485
+      CharlieShatterfateTest1_109: -670402517
+      CharlieShatterfateTest1_11: 745283383
+      CharlieShatterfateTest1_110: -625259789
+      CharlieShatterfateTest1_111: -1547745810
+      CharlieShatterfateTest1_112: 1653344946
+      CharlieShatterfateTest1_113: 83998623
+      CharlieShatterfateTest1_114: -749643186
+      CharlieShatterfateTest1_115: 123569028
+      CharlieShatterfateTest1_116: -412177559
+      CharlieShatterfateTest1_117: -1788953445
+      CharlieShatterfateTest1_118: -533055686
+      CharlieShatterfateTest1_119: 1977385126
+      CharlieShatterfateTest1_12: -2121814737
+      CharlieShatterfateTest1_120: -968899343
+      CharlieShatterfateTest1_121: -436519717
+      CharlieShatterfateTest1_122: -1562378908
+      CharlieShatterfateTest1_123: 1107817679
+      CharlieShatterfateTest1_124: -1961670338
+      CharlieShatterfateTest1_125: -589082799
+      CharlieShatterfateTest1_126: 981673735
+      CharlieShatterfateTest1_127: 1100066289
+      CharlieShatterfateTest1_128: -1379225726
+      CharlieShatterfateTest1_129: 2052441623
+      CharlieShatterfateTest1_13: -1651385343
+      CharlieShatterfateTest1_130: -1531960956
+      CharlieShatterfateTest1_131: 1677644895
+      CharlieShatterfateTest1_132: 1327567201
+      CharlieShatterfateTest1_133: -1598411748
+      CharlieShatterfateTest1_134: -916985230
+      CharlieShatterfateTest1_135: -1062561873
+      CharlieShatterfateTest1_136: 1728420578
+      CharlieShatterfateTest1_137: -345986097
+      CharlieShatterfateTest1_138: 1983238510
+      CharlieShatterfateTest1_14: 1850402925
+      CharlieShatterfateTest1_15: -668987106
+      CharlieShatterfateTest1_16: -93079511
+      CharlieShatterfateTest1_17: 260815312
+      CharlieShatterfateTest1_18: -448996608
+      CharlieShatterfateTest1_19: -1931861046
+      CharlieShatterfateTest1_2: 1543882157
+      CharlieShatterfateTest1_20: 143849123
+      CharlieShatterfateTest1_21: -1921183298
+      CharlieShatterfateTest1_22: 203406691
+      CharlieShatterfateTest1_23: -1977900353
+      CharlieShatterfateTest1_24: 304507878
+      CharlieShatterfateTest1_25: -1129842151
+      CharlieShatterfateTest1_26: 499400397
+      CharlieShatterfateTest1_27: 2129440468
+      CharlieShatterfateTest1_28: -408824521
+      CharlieShatterfateTest1_29: 1135271593
+      CharlieShatterfateTest1_3: -1731211035
+      CharlieShatterfateTest1_30: -1047735752
+      CharlieShatterfateTest1_31: -1900764683
+      CharlieShatterfateTest1_32: 867383523
+      CharlieShatterfateTest1_33: -609559140
+      CharlieShatterfateTest1_34: 48850917
+      CharlieShatterfateTest1_35: -1387533702
+      CharlieShatterfateTest1_36: -1133793887
+      CharlieShatterfateTest1_37: -111727881
+      CharlieShatterfateTest1_38: 1550925975
+      CharlieShatterfateTest1_39: -86687266
+      CharlieShatterfateTest1_4: 1211056934
+      CharlieShatterfateTest1_40: 2067554973
+      CharlieShatterfateTest1_41: -946258906
+      CharlieShatterfateTest1_42: 1652404713
+      CharlieShatterfateTest1_43: -927465781
+      CharlieShatterfateTest1_44: -1375016137
+      CharlieShatterfateTest1_45: 1132151435
+      CharlieShatterfateTest1_46: 634936954
+      CharlieShatterfateTest1_47: 1025706112
+      CharlieShatterfateTest1_48: 1824307887
+      CharlieShatterfateTest1_49: 2091341679
+      CharlieShatterfateTest1_5: -1119498815
+      CharlieShatterfateTest1_50: 237669666
+      CharlieShatterfateTest1_51: 1640335112
+      CharlieShatterfateTest1_52: -175999574
+      CharlieShatterfateTest1_53: -186331361
+      CharlieShatterfateTest1_54: 1342781563
+      CharlieShatterfateTest1_55: -351994627
+      CharlieShatterfateTest1_56: -20775499
+      CharlieShatterfateTest1_57: -1924518176
+      CharlieShatterfateTest1_58: 753855971
+      CharlieShatterfateTest1_59: -1550114482
+      CharlieShatterfateTest1_6: -1828639280
+      CharlieShatterfateTest1_60: 1123409812
+      CharlieShatterfateTest1_61: -716915900
+      CharlieShatterfateTest1_62: 280327475
+      CharlieShatterfateTest1_63: -119379440
+      CharlieShatterfateTest1_64: -891977463
+      CharlieShatterfateTest1_65: 334198050
+      CharlieShatterfateTest1_66: 490017753
+      CharlieShatterfateTest1_67: 1451651002
+      CharlieShatterfateTest1_68: -2041176587
+      CharlieShatterfateTest1_69: 288447615
+      CharlieShatterfateTest1_7: -1676809226
+      CharlieShatterfateTest1_70: 2082030542
+      CharlieShatterfateTest1_71: 624789033
+      CharlieShatterfateTest1_72: 279710433
+      CharlieShatterfateTest1_73: -97238787
+      CharlieShatterfateTest1_74: 163411914
+      CharlieShatterfateTest1_75: -912466949
+      CharlieShatterfateTest1_76: 2081214414
+      CharlieShatterfateTest1_77: -649503578
+      CharlieShatterfateTest1_78: 1965953600
+      CharlieShatterfateTest1_79: -412089653
+      CharlieShatterfateTest1_8: -1958903519
+      CharlieShatterfateTest1_80: -1070824633
+      CharlieShatterfateTest1_81: -1934030929
+      CharlieShatterfateTest1_82: -123843009
+      CharlieShatterfateTest1_83: -866885076
+      CharlieShatterfateTest1_84: -242694406
+      CharlieShatterfateTest1_85: -186110438
+      CharlieShatterfateTest1_86: -1636039602
+      CharlieShatterfateTest1_87: 1121910785
+      CharlieShatterfateTest1_88: -988949891
+      CharlieShatterfateTest1_89: -894026789
+      CharlieShatterfateTest1_9: -1048814234
+      CharlieShatterfateTest1_90: -448903768
+      CharlieShatterfateTest1_91: 1299817889
+      CharlieShatterfateTest1_92: -63706037
+      CharlieShatterfateTest1_93: 239803157
+      CharlieShatterfateTest1_94: 1905815390
+      CharlieShatterfateTest1_95: -749638314
+      CharlieShatterfateTest1_96: -1715054043
+      CharlieShatterfateTest1_97: -477708173
+      CharlieShatterfateTest1_98: -455949250
+      CharlieShatterfateTest1_99: -621189507
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
