@@ -3869,7 +3869,7 @@ PrefabInstance:
       objectReference: {fileID: 1735979279}
     - target: {fileID: 8287116951402493867, guid: e56b4907299439a4fa308ce1e64e1f82, type: 3}
       propertyPath: sceneToLoad
-      value: PlayGame
+      value: Level2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4080,7 +4080,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5432233628479452184, guid: 7c04a555a3c318c4192ba5dcd27ff1b6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 7c04a555a3c318c4192ba5dcd27ff1b6, type: 3}
 --- !u!1001 &7459368017386247316
 PrefabInstance:
