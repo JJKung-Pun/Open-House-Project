@@ -8,9 +8,9 @@ public class LightAttackArea : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.GetComponent<Health>() != null)
+        EnemyHealth health = collider.GetComponent<EnemyHealth>();
+        if (health != null)
         {
-            Health health = collider.GetComponent<Health>();
             health.Damage(damage); 
         }
     }

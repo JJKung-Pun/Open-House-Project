@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,24 +17,22 @@ public class PlayerController : MonoBehaviour
     private bool isDashing = false;
     private Rigidbody2D rb;
     private Vector2 movement;
-
-    public Slider staminaBar;
-
+    public Slider staminaBar; // Reference to the stamina slider
     private bool facingRight = true;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        UpdateStaminaBar();
+        staminaBar.maxValue = maxStamina; // Set max value for the stamina slider
+        staminaBar.value = stamina; // Initialize stamina slider with current stamina
     }
 
     void Update()
     {
-        
         Move();
         Sprint();
         Dash();
-        UpdateStaminaBar(); 
+        UpdateStaminaBar();
     }
 
     void Move()
@@ -43,7 +40,7 @@ public class PlayerController : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
         movement = new Vector2(moveHorizontal, moveVertical);
-        
+
         if (movement != Vector2.zero)
         {
             float speed = isDashing ? dashSpeed : (Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : walkSpeed);
@@ -62,15 +59,28 @@ public class PlayerController : MonoBehaviour
 
     void Sprint()
     {
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift) && stamina > 0) // Only sprint if stamina is available
         {
-            if (stamina > 0)
-            {
-                stamina -= staminaDrainRate * Time.deltaTime;
-                if (stamina < 0) stamina = 0;
-            }
+            DrainStamina(staminaDrainRate * Time.deltaTime);
         }
         else
+        {
+            RegenerateStamina();
+        }
+    }
+
+    public void DrainStamina(float amount)
+    {
+        if (stamina > 0)
+        {
+            stamina -= amount;
+            if (stamina < 0) stamina = 0;
+        }
+    }
+
+    public void RegenerateStamina()
+    {
+        if (stamina < maxStamina) // Only regenerate if below max
         {
             stamina += staminaRegenRate * Time.deltaTime;
             if (stamina > maxStamina) stamina = maxStamina;
@@ -81,7 +91,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && !isDashing && dashTime <= 0)
         {
-            if (stamina >= 30f) 
+            if (stamina >= 30f)
             {
                 isDashing = true;
                 stamina -= 30f;
@@ -103,7 +113,7 @@ public class PlayerController : MonoBehaviour
     {
         if (staminaBar != null)
         {
-            staminaBar.value = stamina; 
+            staminaBar.value = stamina; // Update stamina slider value to current stamina
         }
     }
 

@@ -1,174 +1,51 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerParry : MonoBehaviour
 {
-    public float parryWindow = 1f; 
-    public bool isParrying = false; 
-    public bool isBlocking = false; 
-    public GameObject parryEffect; 
-    public GameObject blockEffect; 
-    public float knockbackForce = 10f; 
-    public float knockbackDuration = 0.5f; 
-    public float knockbackCooldown = 1f; 
-
-    private PlayerController playerController; 
-    public int parryStaminaCost = 20; 
-    public float blockStaminaDrainRate = 5f; 
-
-    private Coroutine parryCoroutine;
-    private Coroutine blockCoroutine;
-    private bool enemyKnockedBack = false;
-    private Coroutine knockbackCoroutine; 
+    private bool isParrying;
+    private bool isBlocking;
+    public float parryTime = 1.0f;
+    public float staminaDrain = 20f;
+    private PlayerController playerController;
 
     void Start()
     {
-        playerController = GetComponent<PlayerController>(); 
+        playerController = GetComponent<PlayerController>();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) && playerController.stamina >= staminaDrain)
         {
-            if (!isBlocking && playerController.stamina >= parryStaminaCost) 
-            {
-                parryCoroutine = StartCoroutine(Parry());
-            }
+            isParrying = true;
+            StartCoroutine(ParryCoroutine());
         }
-        else if (Input.GetKey(KeyCode.F))
+        else if (Input.GetKey(KeyCode.F) && playerController.stamina > 0)
         {
-            if (!isBlocking && !isParrying && playerController.stamina > 0) 
-            {
-                StartBlock();
-            }
+            isBlocking = true;
+            playerController.DrainStamina(staminaDrain * Time.deltaTime);
         }
-
-        if (Input.GetKeyUp(KeyCode.F))
+        else
         {
-            StopBlock();
+            isBlocking = false;
         }
     }
 
-    IEnumerator Parry()
+    private IEnumerator ParryCoroutine()
     {
-        playerController.stamina -= parryStaminaCost;
-        isParrying = true;
-
-        if (parryEffect != null)
-        {
-            Instantiate(parryEffect, transform.position, Quaternion.identity);
-        }
-
-        yield return new WaitForSeconds(parryWindow);
-
+        playerController.DrainStamina(staminaDrain);
+        yield return new WaitForSeconds(parryTime);
         isParrying = false;
-
-        if (Input.GetKey(KeyCode.F))
-        {
-            StartBlock();
-        }
-
-        parryCoroutine = null; 
     }
 
-    void StartBlock()
+    public bool IsParrying()
     {
-        isBlocking = true;
-
-        if (blockEffect != null)
-        {
-            Instantiate(blockEffect, transform.position, Quaternion.identity);
-        }
-
-        if (blockCoroutine == null)
-        {
-            blockCoroutine = StartCoroutine(Block());
-        }
+        return isParrying;
     }
 
-    void StopBlock()
+    public bool IsBlocking()
     {
-        isBlocking = false;
-
-        if (blockCoroutine != null)
-        {
-            StopCoroutine(blockCoroutine);
-            blockCoroutine = null;
-        }
-    }
-
-    IEnumerator Block()
-    {
-        while (isBlocking)
-        {
-            if (playerController.stamina > 0) 
-            {
-                playerController.stamina -= Mathf.RoundToInt(blockStaminaDrainRate * Time.deltaTime); 
-                playerController.stamina = Mathf.Max(playerController.stamina, 0); 
-            }
-            else
-            {
-                StopBlock(); 
-            }
-            yield return null; 
-        }
-    }
-
-    public void OnEnemyAttack(GameObject enemy, int damage)
-    {
-        if (isParrying)
-        {
-            KnockbackEnemy(enemy); 
-            return; 
-        }
-        else if (isBlocking)
-        {
-            damage = Mathf.RoundToInt(damage * 0.8f); 
-        }
-
-        PlayerHP playerHP = GetComponent<PlayerHP>();
-        playerHP?.TakeDamage(damage);
-    }
-
-    void KnockbackEnemy(GameObject enemy)
-    {
-        if (enemyKnockedBack) return; 
-
-        enemyKnockedBack = true; 
-        Rigidbody2D enemyRb = enemy.GetComponent<Rigidbody2D>();
-
-        if (enemyRb != null)
-        {
-            Vector2 knockbackDirection = (enemy.transform.position - transform.position).normalized;
-            enemyRb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
-
-            if (knockbackCoroutine != null)
-            {
-                StopCoroutine(knockbackCoroutine); 
-            }
-            knockbackCoroutine = StartCoroutine(HandleKnockbackCooldown(enemy));
-        }
-    }
-
-    IEnumerator HandleKnockbackCooldown(GameObject enemy)
-    {
-        EnemyMovement enemyMovement = enemy.GetComponent<EnemyMovement>();
-
-        if (enemyMovement != null)
-        {
-            enemyMovement.enabled = false; 
-        }
-
-        yield return new WaitForSeconds(knockbackDuration); 
-
-        if (enemyMovement != null)
-        {
-            enemyMovement.enabled = true; 
-        }
-
-        yield return new WaitForSeconds(knockbackCooldown); 
-
-        enemyKnockedBack = false;
+        return isBlocking;
     }
 }

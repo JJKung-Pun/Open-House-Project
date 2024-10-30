@@ -1,206 +1,170 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Boss1Attack : MonoBehaviour
 {
-    public GameObject WideSweepingStrikes1; // First hitbox
-    public GameObject WideSweepingStrikes2; // Second hitbox
-    public GameObject OverheadSlamsHitbox; // Hitbox for Overhead Slams
-    public GameObject ChainSweepsHitbox; // Hitbox for Chain Sweeps
-    public int firstHitDamage = 70; // Damage for first hitbox
-    public int secondHitDamage = 30; // Damage for second hitbox
-    public int overheadSlamsDamage = 80; // Damage for Overhead Slams
-    public int chainSweepsDamage = 20; // Damage for Chain Sweeps
-    public float hitbox1Duration = 2.0f; // Time for first hitbox to stay visible
-    public float hitbox2Duration = 1.0f; // Time for second hitbox to stay visible
-    public float overheadSlamsDuration = 3.0f; // Duration for Overhead Slams hitbox
-    public float chainSweepsDuration = 2.0f; // Duration for Chain Sweeps hitbox
-    public float rangeToPlayer = 5.0f; // Range within which the boss will attack
+    // Hitbox game objects for different attacks
+    public GameObject WideSweepingStrikes1;
+    public GameObject WideSweepingStrikes2;
+    public GameObject OverheadSlamsHitbox;
+    public GameObject ChainSweepsHitbox;
 
-    private bool isPlayerInRange = false; // Track if player is in range
-    private bool isAttacking = false; // Track if the boss is currently attacking
-    private SpriteRenderer hitbox1Renderer; // Reference to first hitbox renderer
-    private SpriteRenderer hitbox2Renderer; // Reference to second hitbox renderer
-    private SpriteRenderer overheadSlamsRenderer; // Reference to Overhead Slams hitbox renderer
-    private SpriteRenderer chainSweepsRenderer; // Reference to Chain Sweeps hitbox renderer
+    // Damage values for each attack type
+    public int wideSweepingStrikesDamage = 35;
+    public int overheadSlamsDamage = 45;
+    public int chainSweepsDamage = 30;
+
+    // Attack properties
+    public float hitboxDuration = 1.0f; // Duration for which each hitbox is active
+    public float attackCooldown = 5.0f; // Time before the next attack can occur
+    public float rangeToPlayer = 5.0f; // The range within which the boss can attack
+    public float hitboxDisplayTime = 3.0f; // Time to display hitbox before dealing damage
+
+    private bool isPlayerInRange = false; // Indicates if the player is within attack range
+    private bool isAttacking = false; // Indicates if the boss is currently attacking
+    private EnemyMovement enemyMovement; // Reference to the enemy movement script
 
     private void Start()
     {
-        hitbox1Renderer = WideSweepingStrikes1.GetComponent<SpriteRenderer>();
-        hitbox2Renderer = WideSweepingStrikes2.GetComponent<SpriteRenderer>();
-        overheadSlamsRenderer = OverheadSlamsHitbox.GetComponent<SpriteRenderer>();
-        chainSweepsRenderer = ChainSweepsHitbox.GetComponent<SpriteRenderer>();
-
-        hitbox1Renderer.enabled = false;
-        hitbox2Renderer.enabled = false;
-        overheadSlamsRenderer.enabled = false;
-        chainSweepsRenderer.enabled = false;
+        // Get the enemy movement component
+        enemyMovement = GetComponent<EnemyMovement>();
+        // Disable all hitboxes initially
+        DisableAllHitboxes();
     }
 
-    void Update()
+    private void Update()
     {
         GameObject player = GameObject.FindWithTag("Player");
         if (player != null)
         {
+            // Calculate distance to player
             float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
             isPlayerInRange = distanceToPlayer <= rangeToPlayer;
 
-            // Check if the boss can attack
+            // If the player is in range and the boss is not currently attacking
             if (isPlayerInRange && !isAttacking)
             {
-                StartCoroutine(SelectAndPerformRandomAttack());
+                StartCoroutine(SelectRandomAttack());
             }
         }
     }
 
-    private IEnumerator SelectAndPerformRandomAttack()
+    private IEnumerator SelectRandomAttack()
     {
-        isAttacking = true;
+        isAttacking = true; // Mark the boss as attacking
 
-        // Randomly select one of the three available attacks
-        List<string> availableAttacks = new List<string> { "OverheadSlams", "ChainSweeps", "WideSweepingStrikes" };
-        int randomIndex = Random.Range(0, availableAttacks.Count);
-        string selectedAttack = availableAttacks[randomIndex];
+        // Stop movement at the start of the attack
+        if (enemyMovement != null)
+        {
+            enemyMovement.StopMovement();
+        }
 
-        // Execute the selected attack
-        if (selectedAttack == "OverheadSlams")
+        // Select a random attack type
+        float randomValue = Random.value;
+        if (randomValue < 0.33f)
         {
             yield return OverheadSlams();
         }
-        else if (selectedAttack == "ChainSweeps")
+        else if (randomValue < 0.66f)
         {
             yield return ChainSweeps();
         }
-        else if (selectedAttack == "WideSweepingStrikes")
+        else
         {
             yield return WideSweepingStrikes();
         }
 
-        // After performing the attack, wait for a cooldown period before selecting a new attack
-        float cooldownDuration = Random.Range(3f, 5f);
-        yield return new WaitForSeconds(cooldownDuration);
+        // Wait for the cooldown duration before allowing another attack
+        yield return new WaitForSeconds(attackCooldown);
 
-        isAttacking = false;
+        // Resume movement after the attack is finished
+        if (enemyMovement != null)
+        {
+            enemyMovement.StartMovement();
+        }
+
+        isAttacking = false; // Mark the boss as not attacking anymore
     }
 
     private IEnumerator ChainSweeps()
     {
-        // Disable movement
-        EnemyMovement enemyMovement = GetComponent<EnemyMovement>();
-        if (enemyMovement != null)
-        {
-            enemyMovement.enabled = false; // Ensure the enemy doesn't move
-        }
+        ChainSweepsHitbox.SetActive(true); // Activate the chain sweeps hitbox
+        yield return new WaitForSeconds(hitboxDisplayTime); // Wait for hitbox display time
+        yield return new WaitForSeconds(hitboxDuration); // Wait for the duration
 
-        // Chain Sweeps hitbox active
-        chainSweepsRenderer.enabled = true;
-        yield return new WaitForSeconds(chainSweepsDuration);
-
-        // Damage player if in chain sweeps range (allows parry)
-        DealDamageToPlayer(chainSweepsDamage, ChainSweepsHitbox);
-        chainSweepsRenderer.enabled = false;
-
-        // Re-enable movement immediately after the attack
-        if (enemyMovement != null)
-        {
-            enemyMovement.enabled = true; // Allow movement again
-        }
+        // Check for damage after the hitbox duration
+        CheckForDamage(ChainSweepsHitbox, chainSweepsDamage);
+        ChainSweepsHitbox.SetActive(false); // Deactivate the hitbox
     }
 
     private IEnumerator WideSweepingStrikes()
     {
-        // Disable movement
-        EnemyMovement enemyMovement = GetComponent<EnemyMovement>();
-        if (enemyMovement != null)
-        {
-            enemyMovement.enabled = false; // Ensure the enemy doesn't move
-        }
+        WideSweepingStrikes1.SetActive(true); // Activate the first hitbox
+        yield return new WaitForSeconds(hitboxDisplayTime); // Wait for hitbox display time
+        yield return new WaitForSeconds(hitboxDuration); // Wait for the duration
+        
+        // Check for damage after the hitbox duration
+        CheckForDamage(WideSweepingStrikes1, wideSweepingStrikesDamage);
+        WideSweepingStrikes1.SetActive(false); // Deactivate the first hitbox
 
-        // First hitbox active
-        hitbox1Renderer.enabled = true;
-        yield return new WaitForSeconds(hitbox1Duration);
-        hitbox1Renderer.enabled = false;
-
-        // Damage player if in first hitbox range (ignores parry)
-        DealDamageToPlayer(firstHitDamage, WideSweepingStrikes1);
-
-        // Second hitbox active
-        hitbox2Renderer.enabled = true;
-        yield return new WaitForSeconds(hitbox2Duration);
-        hitbox2Renderer.enabled = false;
-
-        // Damage player if in second hitbox range (ignores parry)
-        DealDamageToPlayer(secondHitDamage, WideSweepingStrikes2);
-
-        // Re-enable movement immediately after the attack
-        if (enemyMovement != null)
-        {
-            enemyMovement.enabled = true; // Allow movement again
-        }
+        WideSweepingStrikes2.SetActive(true); // Activate the second hitbox
+        yield return new WaitForSeconds(hitboxDisplayTime); // Wait for hitbox display time
+        yield return new WaitForSeconds(hitboxDuration); // Wait for the duration
+        
+        // Check for damage after the hitbox duration
+        CheckForDamage(WideSweepingStrikes2, wideSweepingStrikesDamage);
+        WideSweepingStrikes2.SetActive(false); // Deactivate the second hitbox
     }
 
     private IEnumerator OverheadSlams()
     {
-        // Disable movement
-        EnemyMovement enemyMovement = GetComponent<EnemyMovement>();
-        if (enemyMovement != null)
-        {
-            enemyMovement.enabled = false; // Ensure the enemy doesn't move
-        }
-
-        // Overhead Slams hitbox active
-        overheadSlamsRenderer.enabled = true;
-        yield return new WaitForSeconds(overheadSlamsDuration);
-
-        // Damage player if in overhead slams range (ignores parry)
-        DealDamageToPlayer(overheadSlamsDamage, OverheadSlamsHitbox);
-        overheadSlamsRenderer.enabled = false;
-
-        // Re-enable movement immediately after the attack
-        if (enemyMovement != null)
-        {
-            enemyMovement.enabled = true; // Allow movement again
-        }
+        OverheadSlamsHitbox.SetActive(true); // Activate the overhead slams hitbox
+        yield return new WaitForSeconds(hitboxDisplayTime); // Wait for hitbox display time
+        yield return new WaitForSeconds(hitboxDuration); // Wait for the duration
+        
+        // Check for damage after the hitbox duration
+        CheckForDamage(OverheadSlamsHitbox, overheadSlamsDamage);
+        OverheadSlamsHitbox.SetActive(false); // Deactivate the hitbox
     }
 
-    private void DealDamageToPlayer(int damage, GameObject hitbox)
+    private void CheckForDamage(GameObject hitbox, int damage)
     {
-        GameObject player = GameObject.FindWithTag("Player");
-        if (player != null)
+        // Get the collider size for the hitbox
+        BoxCollider2D boxCollider = hitbox.GetComponent<BoxCollider2D>();
+        Vector2 size = boxCollider.size;
+
+        // Check for players in the hitbox area
+        Collider2D[] hitColliders = Physics2D.OverlapBoxAll(hitbox.transform.position, size, 0);
+        foreach (var collider in hitColliders)
         {
-            Collider2D playerCollider = player.GetComponent<Collider2D>();
-            if (hitbox.GetComponent<Collider2D>().IsTouching(playerCollider))
+            if (collider.CompareTag("Player"))
             {
-                // If Chain Sweeps, allow parry/block
-                if (hitbox == ChainSweepsHitbox)
+                PlayerHP playerHP = collider.GetComponent<PlayerHP>();
+                if (playerHP != null)
                 {
-                    // Allow parry/block logic
-                    Debug.Log("Player can parry/block Chain Sweeps.");
-                }
-                else
-                {
-                    // Ignore parry, directly apply damage
-                    player.GetComponent<PlayerHP>().TakeDamage(damage);
-                    Debug.Log("Player took " + damage + " damage.");
+                    playerHP.TakeDamage(damage);
                 }
             }
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void DisableAllHitboxes()
     {
-        if (collision.CompareTag("Player"))
-        {
-            isPlayerInRange = true;
-        }
+        // Ensure all hitboxes are deactivated at the start
+        WideSweepingStrikes1.SetActive(false);
+        WideSweepingStrikes2.SetActive(false);
+        OverheadSlamsHitbox.SetActive(false);
+        ChainSweepsHitbox.SetActive(false);
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    public void StopTargetingPlayer()
     {
-        if (collision.CompareTag("Player"))
+        // Stop targeting the player if HP reaches zero
+        isPlayerInRange = false;
+        isAttacking = false;
+        if (enemyMovement != null)
         {
-            isPlayerInRange = false;
+            enemyMovement.StopMovement();
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Health : MonoBehaviour
+public class EnemyHealth : MonoBehaviour
 {
     public int maxHealth = 100; 
     public int currentHealth;
@@ -39,6 +39,7 @@ public class Health : MonoBehaviour
         {
             EnemyDefeated.gameObject.SetActive(true);
             enemyHealthBar.gameObject.SetActive(false); 
+            gameObject.SetActive(false); // Deactivate the enemy GameObject
         }
     }
 

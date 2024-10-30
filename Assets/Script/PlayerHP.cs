@@ -1,68 +1,39 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerHP : MonoBehaviour
 {
-    public int maxHealth = 100; 
+    public int maxHealth = 100;
     public int currentHealth;
-    public CanvasGroup Die;
-    public Slider healthBar;
+    public Slider healthSlider;
+    public GameObject youDiedPanel;
+    private Boss1Attack bossAttack;
 
     void Start()
     {
-        Die.gameObject.SetActive(false);
         currentHealth = maxHealth;
-        if (healthBar != null)
-        {
-            healthBar.maxValue = maxHealth;
-            healthBar.value = currentHealth;
-        }
-
+        healthSlider.maxValue = maxHealth;
+        healthSlider.value = currentHealth;
+        youDiedPanel.SetActive(false);
+        bossAttack = FindObjectOfType<Boss1Attack>();
     }
 
-    public void Damage(int damageAmount)
+    public void TakeDamage(int damage)
     {
-        currentHealth -= damageAmount;
-
-        if (healthBar != null)
+        currentHealth -= damage;
+        healthSlider.value = currentHealth;
+        if (currentHealth <= 0)
         {
-            healthBar.value = currentHealth;
-        }
-
-        if (currentHealth == 0)
-        {
-            Die.gameObject.SetActive(true);
+            Die();
         }
     }
 
-    public void Heal(int amount)
+    private void Die()
     {
-        if (currentHealth <= 0) return;
-
-        currentHealth += amount;
-        currentHealth = Mathf.Min(currentHealth, maxHealth);
-
-        if (healthBar != null)
+        youDiedPanel.SetActive(true);
+        if (bossAttack != null)
         {
-            healthBar.value = currentHealth;
-        }
-    }
-
-    public void TakeDamage(int amount)
-    {
-        currentHealth -= amount;
-        
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-
-        healthBar.value = currentHealth;
-
-        Debug.Log("Player took " + amount + " damage. Current health: " + currentHealth);
-
-        if (currentHealth == 0)
-        {
-            Die.gameObject.SetActive(true);
+            bossAttack.StopTargetingPlayer();
         }
     }
 }

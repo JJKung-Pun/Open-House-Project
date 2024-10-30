@@ -9,7 +9,8 @@ public class EnemyMovement : MonoBehaviour
     public float stopDistance = 0.5f;
 
     private float distance;
-    private float fixedY; 
+    private float fixedY;
+    private bool canMove = true; // Controls whether the enemy can move
 
     void Start()
     {
@@ -18,17 +19,25 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
-        if (player != null)
+        if (player != null && canMove)
         {
             distance = Vector2.Distance(transform.position, player.transform.position);
 
             if (distance > stopDistance)
             {
-                Vector2 direction = new Vector2(player.transform.position.x - transform.position.x, 0).normalized;
-
                 Vector2 targetPosition = new Vector2(player.transform.position.x, fixedY);
                 transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
             }
         }
+    }
+
+    public void StopMovement()
+    {
+        canMove = false;
+    }
+
+    public void StartMovement()
+    {
+        canMove = true;
     }
 }
