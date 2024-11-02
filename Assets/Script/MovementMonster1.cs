@@ -4,46 +4,30 @@ using UnityEngine;
 
 public class MovementMonster1 : MonoBehaviour
 {
-    public float moveSpeed = 2.0f; // Speed at which the monster moves
-    public float stopDistance = 1.5f; // Distance to stop from the player
-    private Transform player; // Reference to the player's position
-    private Rigidbody2D rb; // Monster's Rigidbody2D
+    public Transform player;
+    public float moveSpeed = 2f;
+    public float stopDistance = 1.5f;
 
-    void Start()
+    public bool IsMoving { get; private set; }
+
+    private void Update()
     {
-        // Get the player object and Rigidbody2D
-        player = GameObject.FindWithTag("Player").transform;
-        rb = GetComponent<Rigidbody2D>();
+        MoveTowardsPlayer();
     }
 
-    void Update()
+    private void MoveTowardsPlayer()
     {
-        if (player != null)
-        {
-            MoveTowardPlayer();
-        }
-    }
-
-    // Function to check if the monster is moving
-    public bool IsMoving()
-    {
-        return rb.velocity.magnitude > 0.1f;
-    }
-
-    private void MoveTowardPlayer()
-    {
-        // Calculate the distance between the monster and the player
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
-        // Move toward the player if the distance is greater than the stopDistance
         if (distanceToPlayer > stopDistance)
         {
+            IsMoving = true;
             Vector2 direction = (player.position - transform.position).normalized;
-            rb.velocity = direction * moveSpeed; // Apply movement
+            transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
         }
         else
         {
-            rb.velocity = Vector2.zero; // Stop moving when in range
+            IsMoving = false;
         }
     }
 }

@@ -8,10 +8,10 @@ public class LightAttackArea : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        EnemyHealth health = collider.GetComponent<EnemyHealth>();
+        Boss1HP health = collider.GetComponent<Boss1HP>();
         if (health != null)
         {
-            health.Damage(damage); 
+            health.Damage(damage);
         }
     }
 }

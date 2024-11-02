@@ -4,31 +4,35 @@ using UnityEngine;
 
 public class MonsterAnimationControl : MonoBehaviour
 {
-    private Animator animator; // Reference to the Animator component
-    private MovementMonster1 movementScript; // Reference to the movement script
+    private Animator animator;
+    private MovementMonster1 movementScript;
 
     void Start()
     {
-        // Get references to the Animator and movement script
         animator = GetComponent<Animator>();
         movementScript = GetComponent<MovementMonster1>();
     }
 
     void Update()
     {
-        // Check if the monster is moving or idle
         if (movementScript != null)
         {
-            if (movementScript.IsMoving()) // Check if the monster is moving
+            if (movementScript.IsMoving) // Access IsMoving as a property
             {
-                animator.SetBool("isWalking", true); // Play walking animation
-                animator.SetBool("isIdle", false); // Stop idle animation
+                animator.SetBool("isWalking", true);
+                animator.SetBool("isIdle", false);
             }
             else
             {
-                animator.SetBool("isWalking", false); // Stop walking animation
-                animator.SetBool("isIdle", true); // Play idle animation
+                animator.SetBool("isWalking", false);
+                animator.SetBool("isIdle", true);
             }
         }
+    }
+
+    // Call this method to trigger the attack animation
+    public void TriggerAttack()
+    {
+        animator.SetTrigger("isAttack"); // Ensure this matches your parameter name in the Animator
     }
 }

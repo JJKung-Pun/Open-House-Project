@@ -7,6 +7,7 @@ public class PlayerHP : MonoBehaviour
     public int currentHealth;
     public Slider healthSlider;
     public GameObject youDiedPanel;
+    public GameObject playerSprite; // Reference to the player sprite
     private Boss1Attack bossAttack;
 
     void Start()
@@ -31,6 +32,10 @@ public class PlayerHP : MonoBehaviour
     private void Die()
     {
         youDiedPanel.SetActive(true);
+        if (playerSprite != null) // Check if the player sprite reference is set
+        {
+            playerSprite.SetActive(false); // Deactivate the player sprite
+        }
         if (bossAttack != null)
         {
             bossAttack.StopTargetingPlayer();
