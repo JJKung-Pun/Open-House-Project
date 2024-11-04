@@ -9,6 +9,7 @@ public class PlayerHP : MonoBehaviour
     public GameObject youDiedPanel;
     public GameObject playerSprite; // Reference to the player sprite
     private Boss1Attack bossAttack;
+    private Animator animator; // Reference to the Animator component
 
     void Start()
     {
@@ -17,12 +18,19 @@ public class PlayerHP : MonoBehaviour
         healthSlider.value = currentHealth;
         youDiedPanel.SetActive(false);
         bossAttack = FindObjectOfType<Boss1Attack>();
+        animator = playerSprite.GetComponent<Animator>(); // Initialize Animator
     }
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
         healthSlider.value = currentHealth;
+
+        if (animator != null)
+        {
+            animator.SetTrigger("takeDamage"); // Play damage animation
+        }
+
         if (currentHealth <= 0)
         {
             Die();
@@ -31,11 +39,29 @@ public class PlayerHP : MonoBehaviour
 
     private void Die()
     {
-        youDiedPanel.SetActive(true);
-        if (playerSprite != null) // Check if the player sprite reference is set
+        if (animator != null)
         {
-            playerSprite.SetActive(false); // Deactivate the player sprite
+            animator.SetTrigger("isDead"); // Play death animation
         }
+
+        youDiedPanel.SetActive(true);
+
+        PlayerController playerController = GetComponent<PlayerController>();
+    if (playerController != null)
+    {
+        Destroy(playerController);
+    }
+    Boss1Attack bossAttack = FindObjectOfType<Boss1Attack>();
+    if (bossAttack != null)
+    {
+        Destroy(bossAttack);
+    }
+
+    PlayerAttackAnimation playerAttackAnimation = GetComponent<PlayerAttackAnimation>();
+    if (playerAttackAnimation != null)
+    {
+        Destroy(playerAttackAnimation);
+    }
         if (bossAttack != null)
         {
             bossAttack.StopTargetingPlayer();

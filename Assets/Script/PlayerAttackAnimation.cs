@@ -11,9 +11,11 @@ public class PlayerAttackAnimation : MonoBehaviour
 
     void Update()
     {
+
         // Detect key press (J key)
         if (Input.GetKeyDown(KeyCode.J))
         {
+            Debug.Log("J key pressed"); // Log key press
             // Increment the attack count
             if (!isAttacking)
             {
@@ -53,15 +55,23 @@ public class PlayerAttackAnimation : MonoBehaviour
 
     void Attack()
     {
+        if (animator == null)
+        {
+            Debug.LogError("Animator not assigned!"); // Error if animator is null
+            return;
+        }
+
         if (attackCount == 1)
         {
-            Debug.Log("Playing single press sequence: PlayerAttackStart -> PlayerAttackEnd");
-            StartCoroutine(PlayAttackSequence(new string[] { "PlayerAttackStart", "PlayerAttackEnd" }));
+            Debug.Log("Setting trigger for single attack: PlayerAttackStart");
+            animator.SetTrigger("PlayerAttackStart"); // Trigger single attack animation
+            StartCoroutine(PlayAttackSequence(new string[] { "PlayerAttackEnd" }));
         }
         else if (attackCount > 1)
         {
-            Debug.Log("Playing multiple press sequence: PlayerAttackStart -> PlayerAttackLoop -> PlayerAttackEnd");
-            StartCoroutine(PlayAttackSequence(new string[] { "PlayerAttackStart", "PlayerAttackLoop", "PlayerAttackEnd" }));
+            Debug.Log("Setting trigger for combo attack: PlayerAttackStart -> PlayerAttackLoop -> PlayerAttackEnd");
+            animator.SetTrigger("PlayerAttackStart"); // Trigger the attack start
+            StartCoroutine(PlayAttackSequence(new string[] { "PlayerAttackLoop", "PlayerAttackEnd" })); // Coroutine for combo
         }
 
         isAttacking = true; // Set attacking state
@@ -69,12 +79,14 @@ public class PlayerAttackAnimation : MonoBehaviour
 
     private System.Collections.IEnumerator PlayAttackSequence(string[] animations)
     {
-        // Play each animation in sequence with a delay
         foreach (string anim in animations)
         {
-            Debug.Log("Playing animation: " + anim);
-            animator.Play(anim);
-            yield return new WaitForSeconds(0.75f);  // Wait for animation to complete
+            Debug.Log("Setting trigger for animation: " + anim);
+            animator.SetTrigger(anim);  // Trigger the specified animation
+
+            // Wait for the animation to complete (this might need adjustment based on animation length)
+            AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+            yield return new WaitForSeconds(stateInfo.length); // Wait for the animation's length
         }
 
         // After finishing animations, reset states

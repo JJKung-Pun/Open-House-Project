@@ -35,5 +35,14 @@ public class PlayerAnimationControl : MonoBehaviour
             animator.SetBool("isRunning", false);
             animator.SetBool("isWalking", false);  // Go back to idle
         }
+          if (Input.GetKeyDown(KeyCode.Space))
+        {
+            TriggerDashAnimation();
+        }
+    }
+
+    private void TriggerDashAnimation()
+    {
+        animator.SetTrigger("Dash"); // Use a trigger to start the dash animation
     }
 }

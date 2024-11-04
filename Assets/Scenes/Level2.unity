@@ -1310,14 +1310,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9273164bd49931458f15320e946cfec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitbox: {fileID: 0}
-  hitboxVisibleDuration: 3
-  attackDamage: 35
-  poisonDamage: 1
-  poisonDuration: 15
-  rangeToPlayer: 3
-  attackCooldown: 5
-  isAttacking: 0
 --- !u!114 &993833428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1330,8 +1322,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c69ba3322bae149a936818e8753c44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
-  stopDistance: 1.5
 --- !u!95 &993833429
 Animator:
   serializedVersion: 5
@@ -1464,7 +1454,7 @@ SpriteRenderer:
   m_Size: {x: 1.40625, y: 1.4375}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &993833433
