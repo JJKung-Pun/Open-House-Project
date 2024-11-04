@@ -15,15 +15,13 @@ public class SceneTransition : MonoBehaviour
         StartCoroutine(FadeIn()); 
     }
 
-private void OnTriggerEnter2D(Collider2D collision)
-{
-    Debug.Log("Triggered by: " + collision.gameObject.name); // Log the name of the object that triggered
-    if (collision.CompareTag("Player"))
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Player entered warp!");
-        StartCoroutine(FadeOutAndChangeScene());
+        if (collision.CompareTag("Player"))
+        {
+            StartCoroutine(FadeOutAndChangeScene());
+        }
     }
-}
 
     private IEnumerator FadeOutAndChangeScene()
     {

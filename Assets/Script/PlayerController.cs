@@ -17,21 +17,25 @@ public class PlayerController : MonoBehaviour
     private bool isDashing = false;
     private Rigidbody2D rb;
     private Vector2 movement;
-    public Slider staminaBar; // Reference to the stamina slider
+    public Slider staminaBar;
     private bool facingRight = true;
+    private bool canMove = true;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        staminaBar.maxValue = maxStamina; // Set max value for the stamina slider
-        staminaBar.value = stamina; // Initialize stamina slider with current stamina
+        staminaBar.maxValue = maxStamina;
+        staminaBar.value = stamina;
     }
 
     void Update()
     {
-        Move();
-        Sprint();
-        Dash();
+        if (canMove)
+        {
+            Move();
+            Sprint();
+            Dash();
+        }
         UpdateStaminaBar();
     }
 
@@ -59,7 +63,7 @@ public class PlayerController : MonoBehaviour
 
     void Sprint()
     {
-        if (Input.GetKey(KeyCode.LeftShift) && stamina > 0) // Only sprint if stamina is available
+        if (Input.GetKey(KeyCode.LeftShift) && stamina > 0)
         {
             DrainStamina(staminaDrainRate * Time.deltaTime);
         }
@@ -80,7 +84,7 @@ public class PlayerController : MonoBehaviour
 
     public void RegenerateStamina()
     {
-        if (stamina < maxStamina) // Only regenerate if below max
+        if (stamina < maxStamina)
         {
             stamina += staminaRegenRate * Time.deltaTime;
             if (stamina > maxStamina) stamina = maxStamina;
@@ -113,7 +117,7 @@ public class PlayerController : MonoBehaviour
     {
         if (staminaBar != null)
         {
-            staminaBar.value = stamina; // Update stamina slider value to current stamina
+            staminaBar.value = stamina;
         }
     }
 
@@ -121,5 +125,22 @@ public class PlayerController : MonoBehaviour
     {
         facingRight = !facingRight;
         transform.Rotate(0, 180, 0);
+    }
+
+    public void DisableMovementForDuration(float duration)
+    {
+        canMove = false;
+        StartCoroutine(EnableMovementAfterDelay(duration));
+    }
+
+    private IEnumerator EnableMovementAfterDelay(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        canMove = true;
+    }
+
+    public void StopMovement()
+    {
+        rb.velocity = Vector2.zero;
     }
 }

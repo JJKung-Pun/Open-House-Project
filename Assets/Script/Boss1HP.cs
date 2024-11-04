@@ -23,7 +23,7 @@ public class Boss1HP : MonoBehaviour
         }
         bossQTE = GetComponent<Boss1QTE>();
         bossMovement = GetComponent<Boss1Movement>();
-        bossAnimator = GetComponent<Animator>(); // Initialize Animator
+        bossAnimator = GetComponent<Animator>();
     }
 
     public void Damage(int damageAmount)
@@ -32,28 +32,27 @@ public class Boss1HP : MonoBehaviour
         {
             currentHealth -= damageAmount;
 
-            // Trigger hurt animation
+            if (currentHealth < 1)
+            {
+                currentHealth = 1; 
+            }
+            UpdateHealthBar();
+
             if (bossAnimator != null)
             {
                 bossAnimator.SetTrigger("Hurt");
             }
 
-            if (currentHealth < 1)
-            {
-                currentHealth = 1;
-            }
-            UpdateHealthBar();
-
             if (currentHealth == 1)
             {
-                bossQTE.StartQTE();
-                bossMovement.StopMovement();
+                StopAllActions();
+                bossQTE.StartQTE(); // Start QTE when health reaches 1
                 EnemyDefeated.gameObject.SetActive(true);
             }
         }
     }
 
-    private void UpdateHealthBar()
+    public void UpdateHealthBar()
     {
         if (enemyHealthBar != null)
         {
@@ -61,26 +60,20 @@ public class Boss1HP : MonoBehaviour
         }
         if (currentHealth <= 0)
         {
-            Debug.Log("Current health is zero or below. Triggering Dead animation.");
-            // Trigger death animation
             if (bossAnimator != null)
             {
                 bossAnimator.SetTrigger("Dead");
             }
-
-            // Additional logic to handle death after the animation plays
             StartCoroutine(HandleDeath());
         }
     }
 
     private IEnumerator HandleDeath()
     {
-        // Wait for the death animation to complete (adjust duration as needed)
-        yield return new WaitForSeconds(2.0f); 
-
+        yield return new WaitForSeconds(2.0f);
         EnemyDefeated.gameObject.SetActive(true);
         enemyHealthBar.gameObject.SetActive(false);
-        gameObject.SetActive(false); // Deactivate the boss after death
+        gameObject.SetActive(false);
     }
 
     public void Heal(int healAmount)
@@ -91,5 +84,21 @@ public class Boss1HP : MonoBehaviour
             currentHealth = maxHealth;
         }
         UpdateHealthBar();
+    }
+
+    public void ResetHealth()
+    {
+        currentHealth = maxHealth;
+        UpdateHealthBar();
+    }
+
+    private void StopAllActions()
+    {
+        bossMovement.StopMovement(); 
+        bossMovement.StopAttacking(); 
+        if (bossAnimator != null)
+        {
+            bossAnimator.SetBool("IsAttacking", false); 
+        }
     }
 }
