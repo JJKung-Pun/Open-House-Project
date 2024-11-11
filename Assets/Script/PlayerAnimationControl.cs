@@ -5,37 +5,24 @@ using UnityEngine;
 public class PlayerAnimationControl : MonoBehaviour
 {
     public Animator animator;  // Reference to the Animator component
-    private Rigidbody2D rb;    // Reference to the player's Rigidbody2D
-
-    void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();  // Get the Rigidbody2D attached to the player
-    }
 
     void Update()
     {
-        // Get the player's current speed (magnitude of velocity)
-        float speed = rb.velocity.magnitude;
-
-        // If the player is moving (speed > 0.5) and holding Shift (for running)
-        if (speed > 5.5f && Input.GetKey(KeyCode.LeftShift))
+        // If the player presses A (left) or D (right) key, start the walking animation
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
         {
-            animator.SetBool("isRunning", true);
-            animator.SetBool("isWalking", false);
-        }
-        // If the player is moving but not running (speed between 0.5 and 5.5)
-        else if (speed > 0.5f)
-        {
-            animator.SetBool("isRunning", false);
             animator.SetBool("isWalking", true);
+            animator.SetBool("isRunning", false);  // Ensure it's not in the running state
         }
-        // If the player is not moving
+        // If neither A nor D is pressed, stop the walking animation (back to idle)
         else
         {
+            animator.SetBool("isWalking", false);
             animator.SetBool("isRunning", false);
-            animator.SetBool("isWalking", false);  // Go back to idle
         }
-          if (Input.GetKeyDown(KeyCode.Space))
+
+        // Trigger the dash animation when the player presses the Space key
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             TriggerDashAnimation();
         }

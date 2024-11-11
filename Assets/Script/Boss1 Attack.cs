@@ -76,7 +76,6 @@ public class Boss1Attack : MonoBehaviour
         else if (!wideSweepingStrikes1Used && randomValue < 0.75f)
         {
             yield return WideSweepingStrikes1Attack();
-            yield return WideSweepingStrikes2Attack(); // WSS2 follows immediately after WSS1
         }
         else if (!chainSweepsUsed)
         {
@@ -120,24 +119,25 @@ public class Boss1Attack : MonoBehaviour
         yield return new WaitForSeconds(damageDelay);
         yield return ApplyDamageWithHitbox(WideSweepingStrikes1, wideSweepingStrikes1Damage);
         WideSweepingStrikes1.SetActive(false);
+
+        // After using WideSweepingStrikes1, immediately use WideSweepingStrikes2
         wideSweepingStrikes1Used = true;
+        yield return WideSweepingStrikes2Attack();
     }
 
     private IEnumerator WideSweepingStrikes2Attack()
     {
-        if (wideSweepingStrikes1Used) // Only perform WSS2 if WSS1 was used
+        WideSweepingStrikes2.SetActive(true);
+        if (bossAnimator != null)
         {
-            WideSweepingStrikes2.SetActive(true);
-            if (bossAnimator != null)
-            {
-                bossAnimator.SetTrigger("WideSweepingStrikes2");
-            }
-
-            yield return new WaitForSeconds(damageDelay);
-            yield return ApplyDamageWithHitbox(WideSweepingStrikes2, wideSweepingStrikes2Damage);
-            WideSweepingStrikes2.SetActive(false);
-            wideSweepingStrikes2Used = true;
+            bossAnimator.SetTrigger("WideSweepingStrikes2");
         }
+
+        yield return new WaitForSeconds(damageDelay);
+        yield return ApplyDamageWithHitbox(WideSweepingStrikes2, wideSweepingStrikes2Damage);
+        WideSweepingStrikes2.SetActive(false);
+
+        wideSweepingStrikes2Used = true;
     }
 
     private IEnumerator OverheadSlams()
