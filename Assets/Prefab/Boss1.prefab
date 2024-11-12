@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -418.10065, y: -217.38586}
-  m_SizeDelta: {x: -844.6638, y: -427.7648}
+  m_AnchoredPosition: {x: -417.99054, y: -217.48439}
+  m_SizeDelta: {x: -845.9966, y: -428.9816}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7544853860360079357
 CanvasRenderer:
@@ -149,7 +149,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -280,7 +280,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -385,7 +385,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.25, y: 2.29}
+  m_AnchoredPosition: {x: -417.77, y: -214.95}
   m_SizeDelta: {x: 1, y: 1.1}
   m_Pivot: {x: 0.5, y: 0.49999976}
 --- !u!222 &9127754465982111635
@@ -558,7 +558,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -688,7 +688,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -882,7 +882,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00090027, y: -0.000000059605}
+  m_AnchoredPosition: {x: 0.0000000014552, y: 0.000000059604}
   m_SizeDelta: {x: 2.5658, y: 2.8882}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3106952416982330069
@@ -1174,7 +1174,7 @@ MonoBehaviour:
   chainSweepsDamage: 20
   hitboxDuration: 2
   attackCooldown: 2
-  rangeToPlayer: 1.5
+  rangeToPlayer: 0.5
   damageDelay: 2
 --- !u!114 &9090879692330152338
 MonoBehaviour:

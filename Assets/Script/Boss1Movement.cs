@@ -22,7 +22,7 @@ public class Boss1Movement : MonoBehaviour
 
     void Update()
     {
-        if (!canMove || (bossHealth != null && bossHealth.currentHealth <= 1)) // Update this line
+        if (!canMove || (bossHealth != null && bossHealth.currentHealth <= 1))
         {
             SetWalkingAnimation(false);
             return;
@@ -30,7 +30,6 @@ public class Boss1Movement : MonoBehaviour
 
         MoveTowardsPlayer();
     }
-
 
     private void MoveTowardsPlayer()
     {
@@ -44,8 +43,7 @@ public class Boss1Movement : MonoBehaviour
                 transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
                 SetWalkingAnimation(true);
                 
-                // Flip the boss if the player is behind it
-                FlipIfNeeded();
+                FlipIfNeeded(); // Flip the boss if needed to face the player
             }
             else
             {
@@ -56,26 +54,21 @@ public class Boss1Movement : MonoBehaviour
 
     private void FlipIfNeeded()
     {
-        // Calculate the direction to the player
-        Vector2 directionToPlayer = player.transform.position - transform.position;
+        float directionToPlayer = player.transform.position.x - transform.position.x;
 
-        // Check if the player is behind the boss (i.e., negative direction on the x-axis)
-        if (directionToPlayer.x < 0 && transform.localScale.x > 0)
+        if ((directionToPlayer < 0 && transform.localScale.x > 0) || (directionToPlayer > 0 && transform.localScale.x < 0))
         {
-            Flip(); // Flip the boss to face the left
-        }
-        else if (directionToPlayer.x > 0 && transform.localScale.x < 0)
-        {
-            Flip(); // Flip the boss to face the right
+            Flip(); // Flip only if the boss is facing the wrong direction
         }
     }
 
     private void Flip()
     {
-        // Flip the scale of the boss along the x-axis
         Vector3 localScale = transform.localScale;
-        localScale.x *= -1; // Invert the x-scale
+        localScale.x *= -1;
         transform.localScale = localScale;
+        
+        Debug.Log("Flipped Boss. Now facing " + (transform.localScale.x > 0 ? "right" : "left"));
     }
 
     private void SetWalkingAnimation(bool isWalking)
@@ -96,14 +89,11 @@ public class Boss1Movement : MonoBehaviour
         canMove = true;
     }
 
-    // New method to stop attacking
     public void StopAttacking()
     {
-        // Here you can set an animator trigger or bool to stop any attack animations
         if (animator != null)
         {
-            animator.SetBool("IsAttacking", false); // Ensure you have an "IsAttacking" parameter in your Animator
+            animator.SetBool("IsAttacking", false);
         }
-        // You might want to implement additional logic to stop any attack-related behavior
     }
 }
