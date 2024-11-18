@@ -28,13 +28,13 @@ public class Boss1HP : MonoBehaviour
 
     public void Damage(int damageAmount)
     {
-        if (bossQTE != null && !bossQTE.IsInQTE())
+        if (bossQTE != null && !bossQTE.IsInQTE) // Corrected method usage (no parentheses)
         {
             currentHealth -= damageAmount;
 
             if (currentHealth < 1)
             {
-                currentHealth = 1; 
+                currentHealth = 1;
             }
             UpdateHealthBar();
 
@@ -94,11 +94,16 @@ public class Boss1HP : MonoBehaviour
 
     private void StopAllActions()
     {
-        bossMovement.StopMovement(); 
-        bossMovement.StopAttacking(); 
+        bossMovement.StopMovement();
+        bossMovement.StopAttacking();
         if (bossAnimator != null)
         {
-            bossAnimator.SetBool("IsAttacking", false); 
+            bossAnimator.SetBool("IsAttacking", false);
         }
+    }
+
+    public bool CanStartQTE
+    {
+        get { return currentHealth == 1; }
     }
 }

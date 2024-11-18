@@ -1,5 +1,5 @@
 using UnityEngine;
-using TMPro;  // Import TMP namespace
+using TMPro;
 
 public class BossPopup : MonoBehaviour
 {
@@ -25,24 +25,21 @@ public class BossPopup : MonoBehaviour
 
     void Update()
     {
-        // Check if the player is in range and boss's health is 1
-        if (playerInRange && bossHP != null && bossHP.currentHealth == 1 && !isQTEActive)
+        // Use the CanStartQTE property correctly (without parentheses)
+        if (playerInRange && bossHP != null && bossHP.CanStartQTE && !isQTEActive)
         {
-            popupCanvas.SetActive(true);  // Show the popup when player is in range
-            Debug.Log("Popup should display. Player in range and Boss Health: " + bossHP.currentHealth);
+            popupCanvas.SetActive(true);
 
-            // When 'E' is pressed, start the QTE
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Debug.Log("E key pressed. Starting QTE.");
                 isQTEActive = true;
-                bossQTE.StartQTE();  // Start the QTE
-                popupCanvas.SetActive(false);  // Hide the popup after the QTE starts
+                bossQTE.StartQTE();
+                popupCanvas.SetActive(false);
             }
         }
         else
         {
-            popupCanvas.SetActive(false);  // Hide the popup when not in range or QTE is active
+            popupCanvas.SetActive(false);
         }
     }
 
