@@ -8,7 +8,6 @@ public class Boss1HP : MonoBehaviour
     public int currentHealth;
     public CanvasGroup EnemyDefeated;
     public Slider enemyHealthBar;
-    private Boss1QTE bossQTE;
     private Boss1Movement bossMovement;
     private Animator bossAnimator;
 
@@ -21,34 +20,28 @@ public class Boss1HP : MonoBehaviour
             enemyHealthBar.maxValue = maxHealth;
             enemyHealthBar.value = currentHealth;
         }
-        bossQTE = GetComponent<Boss1QTE>();
         bossMovement = GetComponent<Boss1Movement>();
         bossAnimator = GetComponent<Animator>();
     }
 
     public void Damage(int damageAmount)
     {
-        if (bossQTE != null && !bossQTE.IsInQTE) // Corrected method usage (no parentheses)
+        currentHealth -= damageAmount;
+        UpdateHealthBar();
+
+        if (bossAnimator != null)
         {
-            currentHealth -= damageAmount;
+            bossAnimator.SetTrigger("Hurt");
+        }
 
-            if (currentHealth < 1)
-            {
-                currentHealth = 1;
-            }
-            UpdateHealthBar();
-
+        if (currentHealth <= 0)
+        {
+            StopAllActions();
             if (bossAnimator != null)
             {
-                bossAnimator.SetTrigger("Hurt");
+                bossAnimator.SetTrigger("Dead");
             }
-
-            if (currentHealth == 1)
-            {
-                StopAllActions();
-                bossQTE.StartQTE(); // Start QTE when health reaches 1
-                EnemyDefeated.gameObject.SetActive(true);
-            }
+            StartCoroutine(HandleDeath());
         }
     }
 
@@ -57,14 +50,6 @@ public class Boss1HP : MonoBehaviour
         if (enemyHealthBar != null)
         {
             enemyHealthBar.value = currentHealth;
-        }
-        if (currentHealth <= 0)
-        {
-            if (bossAnimator != null)
-            {
-                bossAnimator.SetTrigger("Dead");
-            }
-            StartCoroutine(HandleDeath());
         }
     }
 
@@ -100,10 +85,5 @@ public class Boss1HP : MonoBehaviour
         {
             bossAnimator.SetBool("IsAttacking", false);
         }
-    }
-
-    public bool CanStartQTE
-    {
-        get { return currentHealth == 1; }
     }
 }

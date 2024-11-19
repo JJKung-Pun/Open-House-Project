@@ -6,7 +6,7 @@ TagManager:
   tags:
   - Monster
   - Boss
-  - PlayerAttack
+  - Enemy
   layers:
   - Default
   - TransparentFX

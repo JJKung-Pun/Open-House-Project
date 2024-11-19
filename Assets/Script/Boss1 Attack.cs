@@ -10,25 +10,24 @@ public class Boss1Attack : MonoBehaviour
     public GameObject ChainSweepsHitbox;
     public Animator bossAnimator;
 
-    public int wideSweepingStrikes1Damage = 20; 
-    public int wideSweepingStrikes2Damage = 25; 
-    public int overheadSlamsDamage = 50; 
-    public int chainSweepsDamage = 20; 
+    public int wideSweepingStrikes1Damage = 20;
+    public int wideSweepingStrikes2Damage = 25;
+    public int overheadSlamsDamage = 50;
+    public int chainSweepsDamage = 20;
 
-    public float hitboxDuration = 2.5f; 
-    public float attackCooldown = 5.0f; 
-    public float rangeToPlayer = 5.0f; 
-    public float damageDelay = 0.5f; 
+    public float attackCooldown = 5.0f; // Cooldown between attacks
+    public float rangeToPlayer = 5.0f;
 
-    private bool isPlayerInRange = false; 
-    private bool isAttacking = false; 
-    private Boss1Movement bossMovement; 
-    private Boss1HP bossHealth; 
+    private bool isPlayerInRange = false;
+    private bool isAttacking = false;
+    private bool isCooldownActive = false; // Track cooldown state
+    private Boss1Movement bossMovement;
+    private Boss1HP bossHealth;
 
-    private bool wideSweepingStrikes1Used = false; 
-    private bool wideSweepingStrikes2Used = false; 
-    private bool overheadSlamsUsed = false; 
-    private bool chainSweepsUsed = false; 
+    private bool wideSweepingStrikes1Used = false;
+    private bool wideSweepingStrikes2Used = false;
+    private bool overheadSlamsUsed = false;
+    private bool chainSweepsUsed = false;
 
     private void Start()
     {
@@ -39,11 +38,13 @@ public class Boss1Attack : MonoBehaviour
 
     private void Update()
     {
-        if (bossHealth != null && bossHealth.currentHealth <= 1)
+        if (bossHealth != null && bossHealth.currentHealth <= 0)
         {
             isAttacking = false;
             return;
         }
+
+        if (isCooldownActive) return; // If cooldown is active, skip other updates
 
         GameObject player = GameObject.FindWithTag("Player");
         if (player != null)
@@ -61,40 +62,42 @@ public class Boss1Attack : MonoBehaviour
     private IEnumerator SelectRandomAttack()
     {
         isAttacking = true;
+        isCooldownActive = true; // Start cooldown immediately after an attack begins
 
         if (bossMovement != null)
         {
-            bossMovement.StopMovement();
+            bossMovement.StopMovement(); // Stop boss movement during attack
         }
 
         float randomValue = Random.value;
 
         if (!overheadSlamsUsed && randomValue < 0.5f)
         {
-            yield return OverheadSlams();
+            OverheadSlams();
         }
         else if (!wideSweepingStrikes1Used && randomValue < 0.75f)
         {
-            yield return WideSweepingStrikes1Attack();
+            WideSweepingStrikes1Attack();
         }
         else if (!chainSweepsUsed)
         {
-            yield return ChainSweeps();
+            ChainSweeps();
         }
 
-        yield return new WaitForSeconds(attackCooldown);
+        yield return new WaitForSeconds(attackCooldown); // Apply cooldown between attacks
 
         ResetAttackUsages();
 
         if (bossMovement != null)
         {
-            bossMovement.StartMovement();
+            bossMovement.StartMovement(); // Resume movement after cooldown
         }
 
+        isCooldownActive = false; // End cooldown after it's done
         isAttacking = false;
     }
 
-    private IEnumerator ChainSweeps()
+    private void ChainSweeps()
     {
         ChainSweepsHitbox.SetActive(true);
         if (bossAnimator != null)
@@ -102,13 +105,12 @@ public class Boss1Attack : MonoBehaviour
             bossAnimator.SetTrigger("ChainSweeps");
         }
 
-        yield return new WaitForSeconds(damageDelay);
-        yield return ApplyDamageWithHitbox(ChainSweepsHitbox, chainSweepsDamage);
-        ChainSweepsHitbox.SetActive(false);
+        ApplyDamageWithHitbox(ChainSweepsHitbox, chainSweepsDamage);
+        StartCoroutine(DisableHitboxAfterDelay(ChainSweepsHitbox));
         chainSweepsUsed = true;
     }
 
-    private IEnumerator WideSweepingStrikes1Attack()
+    private void WideSweepingStrikes1Attack()
     {
         WideSweepingStrikes1.SetActive(true);
         if (bossAnimator != null)
@@ -116,31 +118,32 @@ public class Boss1Attack : MonoBehaviour
             bossAnimator.SetTrigger("WideSweepingStrikes1");
         }
 
-        yield return new WaitForSeconds(damageDelay);
-        yield return ApplyDamageWithHitbox(WideSweepingStrikes1, wideSweepingStrikes1Damage);
-        WideSweepingStrikes1.SetActive(false);
+        ApplyDamageWithHitbox(WideSweepingStrikes1, wideSweepingStrikes1Damage);
 
-        // After using WideSweepingStrikes1, immediately use WideSweepingStrikes2
+        // Wait for WideSweepingStrikes1 to finish, then use WideSweepingStrikes2
         wideSweepingStrikes1Used = true;
-        yield return WideSweepingStrikes2Attack();
+        StartCoroutine(DisableHitboxAfterDelay(WideSweepingStrikes1, 0.5f)); // 0.5 seconds duration for WideSweepingStrikes1
+
+        StartCoroutine(WideSweepingStrikes2Attack());
     }
 
     private IEnumerator WideSweepingStrikes2Attack()
     {
+        yield return new WaitForSeconds(0.1f); // Small delay to ensure the first attack finishes
+
         WideSweepingStrikes2.SetActive(true);
         if (bossAnimator != null)
         {
             bossAnimator.SetTrigger("WideSweepingStrikes2");
         }
 
-        yield return new WaitForSeconds(damageDelay);
-        yield return ApplyDamageWithHitbox(WideSweepingStrikes2, wideSweepingStrikes2Damage);
-        WideSweepingStrikes2.SetActive(false);
+        ApplyDamageWithHitbox(WideSweepingStrikes2, wideSweepingStrikes2Damage);
 
         wideSweepingStrikes2Used = true;
+        StartCoroutine(DisableHitboxAfterDelay(WideSweepingStrikes2, 0.5f)); // 0.5 seconds duration for WideSweepingStrikes2
     }
 
-    private IEnumerator OverheadSlams()
+    private void OverheadSlams()
     {
         OverheadSlamsHitbox.SetActive(true);
         if (bossAnimator != null)
@@ -148,16 +151,15 @@ public class Boss1Attack : MonoBehaviour
             bossAnimator.SetTrigger("OverheadSlams");
         }
 
-        yield return new WaitForSeconds(damageDelay);
-        yield return ApplyDamageWithHitbox(OverheadSlamsHitbox, overheadSlamsDamage);
-        OverheadSlamsHitbox.SetActive(false);
+        ApplyDamageWithHitbox(OverheadSlamsHitbox, overheadSlamsDamage);
+        StartCoroutine(DisableHitboxAfterDelay(OverheadSlamsHitbox));
         overheadSlamsUsed = true;
     }
 
-    private IEnumerator ApplyDamageWithHitbox(GameObject hitbox, int damage)
+    private void ApplyDamageWithHitbox(GameObject hitbox, int damage)
     {
         BoxCollider2D boxCollider = hitbox.GetComponent<BoxCollider2D>();
-        if (boxCollider == null) yield break;
+        if (boxCollider == null) return;
 
         Vector2 size = boxCollider.size;
         Vector2 position = hitbox.transform.position;
@@ -174,8 +176,12 @@ public class Boss1Attack : MonoBehaviour
                 }
             }
         }
+    }
 
-        yield return new WaitForSeconds(hitboxDuration - damageDelay);
+    private IEnumerator DisableHitboxAfterDelay(GameObject hitbox, float duration = 1f)
+    {
+        yield return new WaitForSeconds(duration); // Wait for the specified duration
+        hitbox.SetActive(false); // Deactivate hitbox after the delay
     }
 
     private void DisableAllHitboxes()

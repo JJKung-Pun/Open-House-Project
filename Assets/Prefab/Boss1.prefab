@@ -995,8 +995,6 @@ GameObject:
   - component: {fileID: 100475348298719541}
   - component: {fileID: 6558096476974208101}
   - component: {fileID: 4223226574253554683}
-  - component: {fileID: 9090879692330152338}
-  - component: {fileID: 4614251615797782076}
   - component: {fileID: 1994064601021861878}
   - component: {fileID: 251086419281647697}
   - component: {fileID: 5519031952964777255}
@@ -1176,38 +1174,6 @@ MonoBehaviour:
   attackCooldown: 2
   rangeToPlayer: 0.5
   damageDelay: 2
---- !u!114 &9090879692330152338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8892219382246098233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0103695ea2d9b374180336f8e2369df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  qteText: {fileID: 7284808594905957693}
-  qtePopup: {fileID: 1078693636372867502}
-  ePopupText: {fileID: 2112062198471791359}
-  popupCanvas: {fileID: 8134242360656660086}
-  activationRange: 3
---- !u!114 &4614251615797782076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8892219382246098233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb69e06ddbe18104fa0dee3e93a9a99f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  popupCanvas: {fileID: 8134242360656660086}
-  QTEText: {fileID: 4783385065191785207}
-  EPopupText: {fileID: 7284808594905957693}
 --- !u!95 &1994064601021861878
 Animator:
   serializedVersion: 5
