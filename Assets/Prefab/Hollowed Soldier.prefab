@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 1603173039825393313}
   - component: {fileID: 3423844554037010995}
   - component: {fileID: 6028093310578350550}
-  - component: {fileID: 6820207983380234651}
-  - component: {fileID: 8343650290495670249}
-  - component: {fileID: -4185805680385241280}
+  - component: {fileID: 2816851447631548329}
+  - component: {fileID: 7362692916573110540}
+  - component: {fileID: 1724038291954066893}
   m_Layer: 0
   m_Name: Hollowed Soldier
   m_TagString: Enemy
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1783492959, guid: 121c6669510553d4b9f4b92461702bfa, type: 3}
+  m_Sprite: {fileID: -1783492959, guid: f1444b8cdb108a149a8b619749e8c351, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -152,7 +152,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
---- !u!114 &6820207983380234651
+--- !u!114 &2816851447631548329
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,30 +164,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11e71b3df94f9da4fb0092e6d99c2a13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2166554644963524989, guid: cdbd39185a5095044903039e1b0d53ae, type: 3}
-  detectionRange: 6
+  player: {fileID: 0}
+  detectionRange: 3
   stopRange: 0.5
   moveSpeed: 2
   attackScript: {fileID: 0}
---- !u!114 &8343650290495670249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3122904662489867826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a045d3e42c3ab6c4cb34ecaa4c709d88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 2166554644963524989, guid: cdbd39185a5095044903039e1b0d53ae, type: 3}
-  attackRange: 1
-  damage: 20
-  attackCooldown: 3
-  attackHitbox: {fileID: 0}
-  hitboxSpriteRenderer: {fileID: 0}
---- !u!114 &-4185805680385241280
+--- !u!114 &7362692916573110540
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -200,7 +182,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 15
-  currentHealth: 15
+  currentHealth: 0
+--- !u!114 &1724038291954066893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3122904662489867826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a045d3e42c3ab6c4cb34ecaa4c709d88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  attackRange: 1
+  damage: 20
+  attackCooldown: 3
+  attackHitbox: {fileID: 0}
+  hitboxSpriteRenderer: {fileID: 0}
 --- !u!1 &6140095049947797622
 GameObject:
   m_ObjectHideFlags: 0

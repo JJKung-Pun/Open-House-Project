@@ -407,6 +407,42 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &519101148 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8892219382246098233, guid: 80cc8a1a6143f8744961d6a850dcf1bb, type: 3}
+  m_PrefabInstance: {fileID: 758923146}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &519101155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519101148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f5c4e6fb32a4b84d80eac895487344d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 100
+  EnemyDefeated: {fileID: 1334307296}
+  enemyHealthBar: {fileID: 543492369}
+--- !u!114 &519101156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519101148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8241f8bdbeeb4f140979ebc14cf8cc95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 196573362}
+  speed: 2
+  stopDistance: 0.5
 --- !u!114 &543492369 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4555241363445359131, guid: 42ff7f05f3064bd4e9f0d6f256804e30, type: 3}
@@ -739,10 +775,18 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 4614251615797782076, guid: 80cc8a1a6143f8744961d6a850dcf1bb, type: 3}
     - {fileID: 9090879692330152338, guid: 80cc8a1a6143f8744961d6a850dcf1bb, type: 3}
+    - {fileID: 5519031952964777255, guid: 80cc8a1a6143f8744961d6a850dcf1bb, type: 3}
+    - {fileID: 251086419281647697, guid: 80cc8a1a6143f8744961d6a850dcf1bb, type: 3}
     m_RemovedGameObjects:
     - {fileID: 8134242360656660086, guid: 80cc8a1a6143f8744961d6a850dcf1bb, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8892219382246098233, guid: 80cc8a1a6143f8744961d6a850dcf1bb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 519101156}
+    - targetCorrespondingSourceObject: {fileID: 8892219382246098233, guid: 80cc8a1a6143f8744961d6a850dcf1bb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 519101155}
   m_SourcePrefab: {fileID: 100100000, guid: 80cc8a1a6143f8744961d6a850dcf1bb, type: 3}
 --- !u!1 &1053478284
 GameObject:

@@ -44,17 +44,22 @@ public class PlayerLightAttack : MonoBehaviour
         playerController.DisableMovementForDuration(1f);
         playerController.StopMovement();
 
-        // Check for hits on enemies
         Collider2D[] hitColliders = Physics2D.OverlapBoxAll(lightAttackArea.transform.position, lightAttackArea.transform.localScale, 0f);
         foreach (var hitCollider in hitColliders)
         {
-            if (hitCollider.CompareTag("Enemy")) // Make sure the enemy has the "Enemy" tag
+            if (hitCollider.CompareTag("Enemy"))
             {
-                EliteHollowedHealth health = hitCollider.GetComponent<EliteHollowedHealth>();
-                if (health != null)
+                EliteHollowedHealth eliteHealth = hitCollider.GetComponent<EliteHollowedHealth>();
+                if (eliteHealth != null)
                 {
-                    Debug.Log("Enemy hit! Applying damage.");
-                    health.TakeDamage(attackDamage); // Apply damage to the enemy
+                    eliteHealth.TakeDamage(attackDamage);
+                    continue; // Move to the next enemy after processing this one
+                }
+
+                HollowedSoldierHealth soldierHealth = hitCollider.GetComponent<HollowedSoldierHealth>();
+                if (soldierHealth != null)
+                {
+                    soldierHealth.TakeDamage(attackDamage);
                 }
             }
         }
