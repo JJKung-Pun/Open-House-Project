@@ -1,19 +1,24 @@
 using UnityEngine;
+using System.Collections; // Add this line to include IEnumerator
 
 public class EliteHollowedAttack : MonoBehaviour
 {
     [SerializeField] private float cooldownTime = 2.5f;
     [SerializeField] private int damage = 40;
     [SerializeField] private GameObject hitbox;
-
+    
     private EliteHollowedMove moveScript;
     private float cooldownTimer = 0f;
     private bool isCooldown = false;
     private bool playerInRange = false;
 
+    private Animator animator;  // Reference to the Animator component
+
     void Start()
     {
         moveScript = GetComponent<EliteHollowedMove>();
+        animator = GetComponent<Animator>();  // Initialize Animator
+
         if (hitbox != null)
         {
             hitbox.SetActive(false); // Ensure hitbox starts inactive
@@ -36,14 +41,25 @@ public class EliteHollowedAttack : MonoBehaviour
                 moveScript.enabled = true;
             }
         }
+
+        // Re-enable movement if the player leaves the range during cooldown
+        if (isCooldown && !playerInRange)
+        {
+            moveScript.enabled = true;
+        }
     }
 
     void Attack()
     {
+        if (animator != null)
+        {
+            animator.SetTrigger("Attack"); // Trigger the attack animation
+        }
+
         if (hitbox != null)
         {
             hitbox.SetActive(true); // Activate hitbox for the attack
-            Invoke(nameof(DeactivateHitbox), 1f); // Deactivate hitbox after 1 second
+            StartCoroutine(DeactivateHitboxCoroutine()); // Deactivate hitbox after 1 second
         }
 
         PlayerHP playerHP = FindPlayerInHitbox();
@@ -57,8 +73,10 @@ public class EliteHollowedAttack : MonoBehaviour
         moveScript.enabled = false; // Disable movement during cooldown
     }
 
-    void DeactivateHitbox()
+    // Coroutine for hitbox deactivation after delay
+    private IEnumerator DeactivateHitboxCoroutine()
     {
+        yield return new WaitForSeconds(1f); // Duration of attack hitbox
         if (hitbox != null)
         {
             hitbox.SetActive(false);

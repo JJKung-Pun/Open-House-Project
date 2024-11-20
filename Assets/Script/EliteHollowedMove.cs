@@ -9,29 +9,36 @@ public class EliteHollowedMove : MonoBehaviour
     private Transform player;
     private bool isMoving = false;
     private Transform hitbox;
+    private Animator animator;
 
     void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
         hitbox = transform.Find("Hitbox");
+        animator = GetComponent<Animator>(); // Get the Animator component
     }
 
     void Update()
     {
         float distance = Vector2.Distance(transform.position, player.position);
 
-        if (distance <= detectionRange)
+        // If within detection range and not too close to the player
+        if (distance <= detectionRange && distance > stopRange)
         {
             isMoving = true;
-        }
-
-        if (isMoving && distance > stopRange)
-        {
             MoveTowardsPlayer();
         }
         else
         {
             isMoving = false;
+            // Play idle animation when not moving
+            animator.SetBool("IsMoving", false); // Idle state
+        }
+
+        // Update animation states based on movement
+        if (isMoving)
+        {
+            animator.SetBool("IsMoving", true); // Walking state
         }
     }
 
@@ -55,7 +62,7 @@ public class EliteHollowedMove : MonoBehaviour
         // Rotate the hitbox to face the direction of movement
         if (hitbox != null)
         {
-            hitbox.up = direction;
+            hitbox.right = direction;
         }
     }
 }

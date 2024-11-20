@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 8027686647243872860}
   - component: {fileID: 4521720602380550918}
   - component: {fileID: 1361471287297593848}
+  - component: {fileID: 8536807823004051725}
   m_Layer: 0
   m_Name: Elite Hollowed Knight
   m_TagString: Enemy
@@ -209,7 +210,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -524256155, guid: e4c26b1711ab2894da42d8f58e01c615, type: 3}
+  m_Sprite: {fileID: -1801529471, guid: e97dbd20ed95c574b9e45d0c06b77fc7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -326,3 +327,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 30
   currentHealth: 30
+--- !u!95 &8536807823004051725
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6662754849054817524}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 679aa16748295a640b30c4560d590ebc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

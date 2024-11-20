@@ -8,6 +8,7 @@ public class PlayerHP : MonoBehaviour
     public Slider healthSlider;
     public GameObject youDiedPanel;
     private Boss1Attack bossAttack;
+    private Animator animator;  // Add a reference to the Animator component
 
     void Start()
     {
@@ -16,12 +17,21 @@ public class PlayerHP : MonoBehaviour
         healthSlider.value = currentHealth;
         youDiedPanel.SetActive(false);
         bossAttack = FindObjectOfType<Boss1Attack>();
+
+        // Get the Animator component attached to the player
+        animator = GetComponent<Animator>();
     }
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
         healthSlider.value = currentHealth;
+
+        // Trigger take damage animation
+        if (animator != null)
+        {
+            animator.SetTrigger("takeDamage");
+        }
 
         if (currentHealth <= 0)
         {
@@ -31,6 +41,12 @@ public class PlayerHP : MonoBehaviour
 
     private void Die()
     {
+        // Trigger die animation
+        if (animator != null)
+        {
+            animator.SetTrigger("isDead");
+        }
+
         youDiedPanel.SetActive(true);
         gameObject.SetActive(false);
 
@@ -39,6 +55,7 @@ public class PlayerHP : MonoBehaviour
         {
             Destroy(playerController);
         }
+
         Boss1Attack bossAttack = FindObjectOfType<Boss1Attack>();
         if (bossAttack != null)
         {

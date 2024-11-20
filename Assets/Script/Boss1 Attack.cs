@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Boss1Attack : MonoBehaviour
@@ -8,43 +7,45 @@ public class Boss1Attack : MonoBehaviour
     public GameObject WideSweepingStrikes2;
     public GameObject OverheadSlamsHitbox;
     public GameObject ChainSweepsHitbox;
-    public Animator bossAnimator;
+    public Animator bossAnimator; // Animator for handling animations
 
-    public int wideSweepingStrikes1Damage = 20;
-    public int wideSweepingStrikes2Damage = 25;
-    public int overheadSlamsDamage = 50;
-    public int chainSweepsDamage = 20;
+    public int wideSweepingStrikesDamage = 35;
+    public int overheadSlamsDamage = 45;
+    public int chainSweepsDamage = 30;
 
-    public float attackCooldown = 5.0f; // Cooldown between attacks
-    public float rangeToPlayer = 5.0f;
+    public float hitboxDuration = 2.5f; // Total time for hitbox, includes delay before damage
+    public float attackCooldown = 5.0f; 
+    public float rangeToPlayer = 5.0f; 
+    public float damageDelay = 0.5f; // Adjusted time before damage is applied
 
-    private bool isPlayerInRange = false;
-    private bool isAttacking = false;
-    private bool isCooldownActive = false; // Track cooldown state
-    private Boss1Movement bossMovement;
+    private bool isPlayerInRange = false; 
+    private bool isAttacking = false; 
+    private Boss1Movement bossMovement; 
     private Boss1HP bossHealth;
-
-    private bool wideSweepingStrikes1Used = false;
-    private bool wideSweepingStrikes2Used = false;
-    private bool overheadSlamsUsed = false;
-    private bool chainSweepsUsed = false;
 
     private void Start()
     {
         bossMovement = GetComponent<Boss1Movement>();
         bossHealth = GetComponent<Boss1HP>();
         DisableAllHitboxes();
+        bossAnimator = GetComponent<Animator>();
+        if (bossAnimator != null)
+        {
+            bossAnimator.SetTrigger("ChainSweeps"); // Test trigger
+        }
+        else
+        {
+            Debug.LogError("Animator component not found!");
+        }
     }
 
     private void Update()
     {
-        if (bossHealth != null && bossHealth.currentHealth <= 0)
+        if (bossHealth.currentHealth <= 1)
         {
             isAttacking = false;
             return;
         }
-
-        if (isCooldownActive) return; // If cooldown is active, skip other updates
 
         GameObject player = GameObject.FindWithTag("Player");
         if (player != null)
@@ -62,42 +63,42 @@ public class Boss1Attack : MonoBehaviour
     private IEnumerator SelectRandomAttack()
     {
         isAttacking = true;
-        isCooldownActive = true; // Start cooldown immediately after an attack begins
 
         if (bossMovement != null)
         {
-            bossMovement.StopMovement(); // Stop boss movement during attack
+            bossMovement.StopMovement();
         }
 
         float randomValue = Random.value;
+        float attackDuration = 0f; // Variable to track the overall duration of the attack
 
-        if (!overheadSlamsUsed && randomValue < 0.5f)
+        if (randomValue < 0.33f)
         {
-            OverheadSlams();
+            attackDuration = 1.5f; // Adjust according to OverheadSlams duration
+            yield return OverheadSlams();
         }
-        else if (!wideSweepingStrikes1Used && randomValue < 0.75f)
+        else if (randomValue < 0.66f)
         {
-            WideSweepingStrikes1Attack();
+            attackDuration = 2.5f; // Adjust according to ChainSweeps duration
+            yield return ChainSweeps();
         }
-        else if (!chainSweepsUsed)
+        else
         {
-            ChainSweeps();
+            attackDuration = 3f; // Adjust according to WideSweepingStrikes duration
+            yield return WideSweepingStrikes();
         }
 
-        yield return new WaitForSeconds(attackCooldown); // Apply cooldown between attacks
-
-        ResetAttackUsages();
+        yield return new WaitForSeconds(attackCooldown - attackDuration); // Wait for cooldown minus attack duration
 
         if (bossMovement != null)
         {
-            bossMovement.StartMovement(); // Resume movement after cooldown
+            bossMovement.StartMovement();
         }
 
-        isCooldownActive = false; // End cooldown after it's done
         isAttacking = false;
     }
 
-    private void ChainSweeps()
+    private IEnumerator ChainSweeps()
     {
         ChainSweepsHitbox.SetActive(true);
         if (bossAnimator != null)
@@ -105,12 +106,24 @@ public class Boss1Attack : MonoBehaviour
             bossAnimator.SetTrigger("ChainSweeps");
         }
 
-        ApplyDamageWithHitbox(ChainSweepsHitbox, chainSweepsDamage);
-        StartCoroutine(DisableHitboxAfterDelay(ChainSweepsHitbox));
-        chainSweepsUsed = true;
+        float animationDuration = 1.0f;  // Set this to the actual animation length
+        yield return new WaitForSeconds(animationDuration); // Wait for animation to finish
+
+        yield return new WaitForSeconds(damageDelay); // Delay before damage application
+
+        // Now apply damage while the hitbox is active
+        float elapsedTime = 0f;
+        while (elapsedTime < hitboxDuration)
+        {
+            ApplyDamageToPlayer(ChainSweepsHitbox, chainSweepsDamage);
+            elapsedTime += 0.5f;
+            yield return new WaitForSeconds(0.5f); // Wait for the next damage frame
+        }
+
+        ChainSweepsHitbox.SetActive(false);
     }
 
-    private void WideSweepingStrikes1Attack()
+    private IEnumerator WideSweepingStrikes()
     {
         WideSweepingStrikes1.SetActive(true);
         if (bossAnimator != null)
@@ -118,18 +131,21 @@ public class Boss1Attack : MonoBehaviour
             bossAnimator.SetTrigger("WideSweepingStrikes1");
         }
 
-        ApplyDamageWithHitbox(WideSweepingStrikes1, wideSweepingStrikes1Damage);
+        yield return new WaitForSeconds(damageDelay);
 
-        // Wait for WideSweepingStrikes1 to finish, then use WideSweepingStrikes2
-        wideSweepingStrikes1Used = true;
-        StartCoroutine(DisableHitboxAfterDelay(WideSweepingStrikes1, 0.5f)); // 0.5 seconds duration for WideSweepingStrikes1
+        // Apply damage for the first strike
+        float elapsedTime = 0f;
+        while (elapsedTime < hitboxDuration)
+        {
+            ApplyDamageToPlayer(WideSweepingStrikes1, wideSweepingStrikesDamage);
+            elapsedTime += 0.5f;
+            yield return new WaitForSeconds(0.5f);
+        }
 
-        StartCoroutine(WideSweepingStrikes2Attack());
-    }
+        WideSweepingStrikes1.SetActive(false);
 
-    private IEnumerator WideSweepingStrikes2Attack()
-    {
-        yield return new WaitForSeconds(0.1f); // Small delay to ensure the first attack finishes
+        // Second strike with a delay
+        yield return new WaitForSeconds(0.3f); // Small gap between strikes
 
         WideSweepingStrikes2.SetActive(true);
         if (bossAnimator != null)
@@ -137,13 +153,21 @@ public class Boss1Attack : MonoBehaviour
             bossAnimator.SetTrigger("WideSweepingStrikes2");
         }
 
-        ApplyDamageWithHitbox(WideSweepingStrikes2, wideSweepingStrikes2Damage);
+        yield return new WaitForSeconds(damageDelay);
 
-        wideSweepingStrikes2Used = true;
-        StartCoroutine(DisableHitboxAfterDelay(WideSweepingStrikes2, 0.5f)); // 0.5 seconds duration for WideSweepingStrikes2
+        // Apply damage for the second strike
+        elapsedTime = 0f;
+        while (elapsedTime < hitboxDuration)
+        {
+            ApplyDamageToPlayer(WideSweepingStrikes2, wideSweepingStrikesDamage);
+            elapsedTime += 0.5f;
+            yield return new WaitForSeconds(0.5f);
+        }
+
+        WideSweepingStrikes2.SetActive(false);
     }
 
-    private void OverheadSlams()
+    private IEnumerator OverheadSlams()
     {
         OverheadSlamsHitbox.SetActive(true);
         if (bossAnimator != null)
@@ -151,12 +175,24 @@ public class Boss1Attack : MonoBehaviour
             bossAnimator.SetTrigger("OverheadSlams");
         }
 
-        ApplyDamageWithHitbox(OverheadSlamsHitbox, overheadSlamsDamage);
-        StartCoroutine(DisableHitboxAfterDelay(OverheadSlamsHitbox));
-        overheadSlamsUsed = true;
+        float animationDuration = 1.5f; // Set this to the actual animation length
+        yield return new WaitForSeconds(animationDuration); // Wait for animation to finish
+
+        yield return new WaitForSeconds(damageDelay); // Delay before damage application
+
+        // Apply damage while the hitbox is active
+        float elapsedTime = 0f;
+        while (elapsedTime < hitboxDuration)
+        {
+            ApplyDamageToPlayer(OverheadSlamsHitbox, overheadSlamsDamage);
+            elapsedTime += 0.5f;
+            yield return new WaitForSeconds(0.5f);
+        }
+
+        OverheadSlamsHitbox.SetActive(false);
     }
 
-    private void ApplyDamageWithHitbox(GameObject hitbox, int damage)
+    private void ApplyDamageToPlayer(GameObject hitbox, int damage)
     {
         BoxCollider2D boxCollider = hitbox.GetComponent<BoxCollider2D>();
         if (boxCollider == null) return;
@@ -172,16 +208,10 @@ public class Boss1Attack : MonoBehaviour
                 PlayerHP playerHP = collider.GetComponent<PlayerHP>();
                 if (playerHP != null)
                 {
-                    playerHP.TakeDamage(damage);
+                    playerHP.TakeDamage(damage); // Apply damage
                 }
             }
         }
-    }
-
-    private IEnumerator DisableHitboxAfterDelay(GameObject hitbox, float duration = 1f)
-    {
-        yield return new WaitForSeconds(duration); // Wait for the specified duration
-        hitbox.SetActive(false); // Deactivate hitbox after the delay
     }
 
     private void DisableAllHitboxes()
@@ -192,14 +222,6 @@ public class Boss1Attack : MonoBehaviour
         ChainSweepsHitbox.SetActive(false);
     }
 
-    private void ResetAttackUsages()
-    {
-        wideSweepingStrikes1Used = false;
-        wideSweepingStrikes2Used = false;
-        overheadSlamsUsed = false;
-        chainSweepsUsed = false;
-    }
-
     public void StopTargetingPlayer()
     {
         isPlayerInRange = false;
@@ -207,27 +229,6 @@ public class Boss1Attack : MonoBehaviour
         if (bossMovement != null)
         {
             bossMovement.StopMovement();
-        }
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        if (WideSweepingStrikes1.activeSelf)
-        {
-            Gizmos.DrawWireCube(WideSweepingStrikes1.transform.position, WideSweepingStrikes1.GetComponent<BoxCollider2D>().size);
-        }
-        if (WideSweepingStrikes2.activeSelf)
-        {
-            Gizmos.DrawWireCube(WideSweepingStrikes2.transform.position, WideSweepingStrikes2.GetComponent<BoxCollider2D>().size);
-        }
-        if (OverheadSlamsHitbox.activeSelf)
-        {
-            Gizmos.DrawWireCube(OverheadSlamsHitbox.transform.position, OverheadSlamsHitbox.GetComponent<BoxCollider2D>().size);
-        }
-        if (ChainSweepsHitbox.activeSelf)
-        {
-            Gizmos.DrawWireCube(ChainSweepsHitbox.transform.position, ChainSweepsHitbox.GetComponent<BoxCollider2D>().size);
         }
     }
 }

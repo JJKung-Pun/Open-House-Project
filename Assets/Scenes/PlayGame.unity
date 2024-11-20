@@ -1000,6 +1000,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1603173039825393313, guid: 6d57630a0f6e02c4489582cc63cfbe4a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1783492959, guid: 93e392f1e1298ae4794ba18f4f6cf6c5, type: 3}
+    - target: {fileID: 1603173039825393313, guid: 6d57630a0f6e02c4489582cc63cfbe4a, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1724038291954066893, guid: 6d57630a0f6e02c4489582cc63cfbe4a, type: 3}
       propertyPath: player
       value: 
@@ -1578,13 +1586,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 358306337917616553, guid: 477c9e2dde26abb4ba1dbbc21701eb76, type: 3}
+      propertyPath: m_Size.y
+      value: 1.7541823
+      objectReference: {fileID: 0}
+    - target: {fileID: 358306337917616553, guid: 477c9e2dde26abb4ba1dbbc21701eb76, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.06459117
+      objectReference: {fileID: 0}
     - target: {fileID: 3845503778101070280, guid: 477c9e2dde26abb4ba1dbbc21701eb76, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.45
       objectReference: {fileID: 0}
     - target: {fileID: 3845503778101070280, guid: 477c9e2dde26abb4ba1dbbc21701eb76, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.19
+      value: -2.95
       objectReference: {fileID: 0}
     - target: {fileID: 3845503778101070280, guid: 477c9e2dde26abb4ba1dbbc21701eb76, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1622,6 +1638,10 @@ PrefabInstance:
       propertyPath: hitbox
       value: 
       objectReference: {fileID: 1519488984}
+    - target: {fileID: 4924673220808947949, guid: 477c9e2dde26abb4ba1dbbc21701eb76, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.18
+      objectReference: {fileID: 0}
     - target: {fileID: 6662754849054817524, guid: 477c9e2dde26abb4ba1dbbc21701eb76, type: 3}
       propertyPath: m_Name
       value: Elite Hollowed Knight
