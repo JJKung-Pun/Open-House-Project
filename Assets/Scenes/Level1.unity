@@ -426,7 +426,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 519101148}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ab023c2f5231854aafd4c02a532b468, type: 3}
+  m_Script: {fileID: 11500000, guid: d15b540fa29ba094ab8bc08b0cf81778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 196573362}
@@ -441,11 +441,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 519101148}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7eca8f506488384ab541fb0d3f60f93, type: 3}
+  m_Script: {fileID: 11500000, guid: ad06ca857ceaf9f4b99bc523f1a39f8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  currentHealth: 0
+  currentHealth: 100
   EnemyDefeated: {fileID: 1334307296}
   enemyHealthBar: {fileID: 543492369}
   MainMenu: {fileID: 1073953600}
@@ -680,15 +680,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2189904351175534654, guid: 80cc8a1a6143f8744961d6a850dcf1bb, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2552239926145682621, guid: 80cc8a1a6143f8744961d6a850dcf1bb, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2712709582211754123, guid: 80cc8a1a6143f8744961d6a850dcf1bb, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5519031952964777255, guid: 80cc8a1a6143f8744961d6a850dcf1bb, type: 3}
       propertyPath: player
@@ -760,7 +760,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8995116308365577848, guid: 80cc8a1a6143f8744961d6a850dcf1bb, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9090879692330152338, guid: 80cc8a1a6143f8744961d6a850dcf1bb, type: 3}
       propertyPath: qteText
@@ -1401,7 +1401,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -3}
   m_SizeDelta: {x: 252.01, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1073953597
@@ -2458,6 +2458,14 @@ PrefabInstance:
     - target: {fileID: 2698936123684153066, guid: 42ff7f05f3064bd4e9f0d6f256804e30, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2930078576020394475, guid: 42ff7f05f3064bd4e9f0d6f256804e30, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -144.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2930078576020394475, guid: 42ff7f05f3064bd4e9f0d6f256804e30, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -23.3
       objectReference: {fileID: 0}
     - target: {fileID: 3006593991398896111, guid: 42ff7f05f3064bd4e9f0d6f256804e30, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
