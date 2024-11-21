@@ -1166,8 +1166,7 @@ MonoBehaviour:
   OverheadSlamsHitbox: {fileID: 1100303441474082936}
   ChainSweepsHitbox: {fileID: 2040468338090465911}
   bossAnimator: {fileID: 0}
-  wideSweepingStrikes1Damage: 20
-  wideSweepingStrikes2Damage: 25
+  wideSweepingStrikesDamage: 35
   overheadSlamsDamage: 50
   chainSweepsDamage: 20
   hitboxDuration: 2
@@ -1204,11 +1203,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8892219382246098233}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3087a2465b7d76c4dbf4c619ccc1ed03, type: 3}
+  m_Script: {fileID: 11500000, guid: a7eca8f506488384ab541fb0d3f60f93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  currentHealth: 100
+  currentHealth: 0
   EnemyDefeated: {fileID: 0}
   enemyHealthBar: {fileID: 0}
 --- !u!114 &5519031952964777255
@@ -1220,9 +1219,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8892219382246098233}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 382e9e31d26b0104ea20e3013d9c35b9, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ab023c2f5231854aafd4c02a532b468, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 3826631668566236169, guid: cdbd39185a5095044903039e1b0d53ae, type: 3}
+  player: {fileID: 0}
   speed: 2
   stopDistance: 0.5

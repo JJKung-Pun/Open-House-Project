@@ -10,16 +10,20 @@ public class Boss1HP : MonoBehaviour
     public Slider enemyHealthBar;
     private Boss1Movement bossMovement;
     private Animator bossAnimator;
+    public CanvasGroup MainMenu;
 
     void Start()
     {
+        // Initialize components and variables
         EnemyDefeated.gameObject.SetActive(false);
         currentHealth = maxHealth;
+
         if (enemyHealthBar != null)
         {
             enemyHealthBar.maxValue = maxHealth;
             enemyHealthBar.value = currentHealth;
         }
+
         bossMovement = GetComponent<Boss1Movement>();
         bossAnimator = GetComponent<Animator>();
     }
@@ -29,11 +33,13 @@ public class Boss1HP : MonoBehaviour
         currentHealth -= damageAmount;
         UpdateHealthBar();
 
+        // Trigger Hurt animation
         if (bossAnimator != null)
         {
             bossAnimator.SetTrigger("Hurt");
         }
 
+        // Handle death if health is 0 or below
         if (currentHealth <= 0)
         {
             StopAllActions();
@@ -55,19 +61,40 @@ public class Boss1HP : MonoBehaviour
 
     private IEnumerator HandleDeath()
     {
+        // Wait before showing the UI
         yield return new WaitForSeconds(2.0f);
+
+        // Show the enemy defeated UI
         EnemyDefeated.gameObject.SetActive(true);
-        enemyHealthBar.gameObject.SetActive(false);
+
+        // Hide the health bar
+        if (enemyHealthBar != null)
+        {
+            enemyHealthBar.gameObject.SetActive(false);
+        }
+
+        // Show the Main Menu
+        if (MainMenu != null)
+        {
+            MainMenu.alpha = 1;
+            MainMenu.interactable = true;
+            MainMenu.blocksRaycasts = true;
+        }
+
+        // Deactivate the boss GameObject
         gameObject.SetActive(false);
     }
 
     public void Heal(int healAmount)
     {
         currentHealth += healAmount;
+
+        // Clamp health to the max value
         if (currentHealth > maxHealth)
         {
             currentHealth = maxHealth;
         }
+
         UpdateHealthBar();
     }
 
@@ -79,8 +106,14 @@ public class Boss1HP : MonoBehaviour
 
     private void StopAllActions()
     {
-        bossMovement.StopMovement();
-        bossMovement.StopAttacking();
+        // Stop movement and attacking actions
+        if (bossMovement != null)
+        {
+            bossMovement.StopMovement();
+            bossMovement.StopAttacking();
+        }
+
+        // Stop attack animations
         if (bossAnimator != null)
         {
             bossAnimator.SetBool("IsAttacking", false);
