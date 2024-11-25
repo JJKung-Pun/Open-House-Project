@@ -426,7 +426,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 519101148}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d15b540fa29ba094ab8bc08b0cf81778, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c90b6ed268dd0246a6b3535be4b46aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 196573362}
@@ -441,11 +441,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 519101148}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad06ca857ceaf9f4b99bc523f1a39f8e, type: 3}
+  m_Script: {fileID: 11500000, guid: c7ef0d3bf98e3f9438c7a7ec2b0772e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  currentHealth: 100
+  currentHealth: 0
   EnemyDefeated: {fileID: 1334307296}
   enemyHealthBar: {fileID: 543492369}
   MainMenu: {fileID: 1073953600}

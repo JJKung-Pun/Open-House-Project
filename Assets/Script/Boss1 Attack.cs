@@ -13,14 +13,20 @@ public class Boss1Attack : MonoBehaviour
     public int overheadSlamsDamage = 45;
     public int chainSweepsDamage = 30;
 
-    public float hitboxDuration = 2.5f; // Total time for hitbox, includes delay before damage
-    public float attackCooldown = 5.0f; 
-    public float rangeToPlayer = 5.0f; 
-    public float damageDelay = 0.5f; // Adjusted time before damage is applied
+    public float hitboxDuration = 2f; // Total time for hitbox, includes delay before damage
+    public float attackCooldown = 5.0f;
+    public float rangeToPlayer = 5.0f;
+    public float damageDelay = 0.2f; // Adjusted time before damage is applied
 
-    private bool isPlayerInRange = false; 
-    private bool isAttacking = false; 
-    private Boss1Movement bossMovement; 
+    // Unique pre-attack delays for each attack type
+    public float chainSweepsDelay = 1.0f;
+    public float wideSweepingStrikes1Delay = 1.5f;
+    public float wideSweepingStrikes2Delay = 1.0f; // Added specific delay for second wide strike
+    public float overheadSlamsDelay = 2.0f;
+
+    private bool isPlayerInRange = false;
+    private bool isAttacking = false;
+    private Boss1Movement bossMovement;
     private Boss1HP bossHealth;
 
     private void Start()
@@ -29,14 +35,6 @@ public class Boss1Attack : MonoBehaviour
         bossHealth = GetComponent<Boss1HP>();
         DisableAllHitboxes();
         bossAnimator = GetComponent<Animator>();
-        if (bossAnimator != null)
-        {
-            bossAnimator.SetTrigger("ChainSweeps"); // Test trigger
-        }
-        else
-        {
-            Debug.LogError("Animator component not found!");
-        }
     }
 
     private void Update()
@@ -70,7 +68,7 @@ public class Boss1Attack : MonoBehaviour
         }
 
         float randomValue = Random.value;
-        float attackDuration = 0f; // Variable to track the overall duration of the attack
+        float attackDuration = 0f;
 
         if (randomValue < 0.33f)
         {
@@ -88,7 +86,7 @@ public class Boss1Attack : MonoBehaviour
             yield return WideSweepingStrikes();
         }
 
-        yield return new WaitForSeconds(attackCooldown - attackDuration); // Wait for cooldown minus attack duration
+        yield return new WaitForSeconds(attackCooldown - attackDuration);
 
         if (bossMovement != null)
         {
@@ -100,94 +98,59 @@ public class Boss1Attack : MonoBehaviour
 
     private IEnumerator ChainSweeps()
     {
+        yield return new WaitForSeconds(chainSweepsDelay); // Unique delay for ChainSweeps
+
         ChainSweepsHitbox.SetActive(true);
-        if (bossAnimator != null)
-        {
-            bossAnimator.SetTrigger("ChainSweeps");
-        }
+        TriggerAnimation("ChainSweeps");
 
-        float animationDuration = 1.0f;  // Set this to the actual animation length
-        yield return new WaitForSeconds(animationDuration); // Wait for animation to finish
+        yield return new WaitForSeconds(damageDelay);
 
-        yield return new WaitForSeconds(damageDelay); // Delay before damage application
+        ApplyDamageToPlayer(ChainSweepsHitbox, chainSweepsDamage);
 
-        // Now apply damage while the hitbox is active
-        float elapsedTime = 0f;
-        while (elapsedTime < hitboxDuration)
-        {
-            ApplyDamageToPlayer(ChainSweepsHitbox, chainSweepsDamage);
-            elapsedTime += 0.5f;
-            yield return new WaitForSeconds(0.5f); // Wait for the next damage frame
-        }
+        yield return new WaitForSeconds(hitboxDuration);
 
         ChainSweepsHitbox.SetActive(false);
     }
 
     private IEnumerator WideSweepingStrikes()
     {
+        // First strike
+        yield return new WaitForSeconds(wideSweepingStrikes1Delay); // Unique delay for Wide Sweeping Strikes 1
+
         WideSweepingStrikes1.SetActive(true);
-        if (bossAnimator != null)
-        {
-            bossAnimator.SetTrigger("WideSweepingStrikes1");
-        }
+        TriggerAnimation("WideSweepingStrikes1");
 
         yield return new WaitForSeconds(damageDelay);
 
-        // Apply damage for the first strike
-        float elapsedTime = 0f;
-        while (elapsedTime < hitboxDuration)
-        {
-            ApplyDamageToPlayer(WideSweepingStrikes1, wideSweepingStrikesDamage);
-            elapsedTime += 0.5f;
-            yield return new WaitForSeconds(0.5f);
-        }
+        ApplyDamageToPlayer(WideSweepingStrikes1, wideSweepingStrikesDamage);
 
         WideSweepingStrikes1.SetActive(false);
 
-        // Second strike with a delay
-        yield return new WaitForSeconds(0.3f); // Small gap between strikes
+        // Second strike
+        yield return new WaitForSeconds(wideSweepingStrikes2Delay); // Unique delay for Wide Sweeping Strikes 2
 
         WideSweepingStrikes2.SetActive(true);
-        if (bossAnimator != null)
-        {
-            bossAnimator.SetTrigger("WideSweepingStrikes2");
-        }
+        TriggerAnimation("WideSweepingStrikes2");
 
         yield return new WaitForSeconds(damageDelay);
 
-        // Apply damage for the second strike
-        elapsedTime = 0f;
-        while (elapsedTime < hitboxDuration)
-        {
-            ApplyDamageToPlayer(WideSweepingStrikes2, wideSweepingStrikesDamage);
-            elapsedTime += 0.5f;
-            yield return new WaitForSeconds(0.5f);
-        }
+        ApplyDamageToPlayer(WideSweepingStrikes2, wideSweepingStrikesDamage);
 
         WideSweepingStrikes2.SetActive(false);
     }
 
     private IEnumerator OverheadSlams()
     {
+        yield return new WaitForSeconds(overheadSlamsDelay); // Unique delay for Overhead Slams
+
         OverheadSlamsHitbox.SetActive(true);
-        if (bossAnimator != null)
-        {
-            bossAnimator.SetTrigger("OverheadSlams");
-        }
+        TriggerAnimation("OverheadSlams");
 
-        float animationDuration = 1.5f; // Set this to the actual animation length
-        yield return new WaitForSeconds(animationDuration); // Wait for animation to finish
+        yield return new WaitForSeconds(damageDelay);
 
-        yield return new WaitForSeconds(damageDelay); // Delay before damage application
+        ApplyDamageToPlayer(OverheadSlamsHitbox, overheadSlamsDamage);
 
-        // Apply damage while the hitbox is active
-        float elapsedTime = 0f;
-        while (elapsedTime < hitboxDuration)
-        {
-            ApplyDamageToPlayer(OverheadSlamsHitbox, overheadSlamsDamage);
-            elapsedTime += 0.5f;
-            yield return new WaitForSeconds(0.5f);
-        }
+        yield return new WaitForSeconds(hitboxDuration);
 
         OverheadSlamsHitbox.SetActive(false);
     }
@@ -211,6 +174,14 @@ public class Boss1Attack : MonoBehaviour
                     playerHP.TakeDamage(damage); // Apply damage
                 }
             }
+        }
+    }
+
+    private void TriggerAnimation(string animationName)
+    {
+        if (bossAnimator != null)
+        {
+            bossAnimator.SetTrigger(animationName);
         }
     }
 
