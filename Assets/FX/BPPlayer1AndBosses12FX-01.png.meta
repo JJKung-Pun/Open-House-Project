@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -108,7 +108,343 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: BPPlayer1AndBosses12FX-01_0
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 370
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea2b8f03ec1b1814b8a48273dab88c35
+      internalID: 1747587386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BPPlayer1AndBosses12FX-01_1
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 361
+        width: 41
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54a5d06aacb21c7458016433dd954be9
+      internalID: 705725215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BPPlayer1AndBosses12FX-01_2
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 382
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8a9f1a5226440f459322d292f63777e
+      internalID: 597484079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BPPlayer1AndBosses12FX-01_3
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 382
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4209a59a9de9508479ea0dc426518bd2
+      internalID: 2121508036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BPPlayer1AndBosses12FX-01_4
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 373
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc3fca2c3ff133945be6ae1de6275155
+      internalID: 58071381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BPPlayer1AndBosses12FX-01_5
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 242
+        width: 24
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37e3abd33be53ca42962cba45628dde6
+      internalID: 1420459051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BPPlayer1AndBosses12FX-01_6
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 248
+        width: 12
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46205e720c9f27a4ab677d6b8025475f
+      internalID: -1007829138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BPPlayer1AndBosses12FX-01_7
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 243
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eddf4a681de53d74892d00b6678eb6ab
+      internalID: -1337818911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BPPlayer1AndBosses12FX-01_8
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 159
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b811e5620504854cb799a19595f848b
+      internalID: -1786767677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BPPlayer1AndBosses12FX-01_9
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 156
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38dbeb8bf1432c1468a709883aae5bae
+      internalID: -161966235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BPPlayer1AndBosses12FX-01_10
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 158
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36b6f56cb66a07e4a9e4575f08f210e5
+      internalID: -1895667538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BPPlayer1AndBosses12FX-01_11
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 158
+        width: 16
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc302c5bc5bc42849a7dc187f3ddc730
+      internalID: 163833593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BPPlayer1AndBosses12FX-01_12
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 73
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f4ddcfebca0db342b0534889a983d60
+      internalID: -204552690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BPPlayer1AndBosses12FX-01_13
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 73
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fea228d706c5cb5419b96926d28158ca
+      internalID: -859210157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BPPlayer1AndBosses12FX-01_14
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 80
+        width: 23
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dc4415cebc73cb479699d8239d92438
+      internalID: 935608195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BPPlayer1AndBosses12FX-01_15
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 75
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a94195c3ee8bf8f47b4dc43dd09a197a
+      internalID: 213932530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +455,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BPPlayer1AndBosses12FX-01_0: 1747587386
+      BPPlayer1AndBosses12FX-01_1: 705725215
+      BPPlayer1AndBosses12FX-01_10: -1895667538
+      BPPlayer1AndBosses12FX-01_11: 163833593
+      BPPlayer1AndBosses12FX-01_12: -204552690
+      BPPlayer1AndBosses12FX-01_13: -859210157
+      BPPlayer1AndBosses12FX-01_14: 935608195
+      BPPlayer1AndBosses12FX-01_15: 213932530
+      BPPlayer1AndBosses12FX-01_2: 597484079
+      BPPlayer1AndBosses12FX-01_3: 2121508036
+      BPPlayer1AndBosses12FX-01_4: 58071381
+      BPPlayer1AndBosses12FX-01_5: 1420459051
+      BPPlayer1AndBosses12FX-01_6: -1007829138
+      BPPlayer1AndBosses12FX-01_7: -1337818911
+      BPPlayer1AndBosses12FX-01_8: -1786767677
+      BPPlayer1AndBosses12FX-01_9: -161966235
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

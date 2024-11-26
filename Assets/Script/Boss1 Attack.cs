@@ -7,6 +7,7 @@ public class Boss1Attack : MonoBehaviour
     public GameObject WideSweepingStrikes2;
     public GameObject OverheadSlamsHitbox;
     public GameObject ChainSweepsHitbox;
+    public GameObject Charge;
     public Animator bossAnimator; // Animator for handling animations
 
     public int wideSweepingStrikesDamage = 35;
@@ -16,7 +17,7 @@ public class Boss1Attack : MonoBehaviour
     public float hitboxDuration = 2f; // Total time for hitbox, includes delay before damage
     public float attackCooldown = 5.0f;
     public float rangeToPlayer = 5.0f;
-    public float damageDelay = 0.2f; // Adjusted time before damage is applied
+    public float damageDelay = 0.05f; // Adjusted time before damage is applied
 
     // Unique pre-attack delays for each attack type
     public float chainSweepsDelay = 1.0f;
@@ -103,13 +104,15 @@ public class Boss1Attack : MonoBehaviour
         ChainSweepsHitbox.SetActive(true);
         TriggerAnimation("ChainSweeps");
 
-        yield return new WaitForSeconds(damageDelay);
+        yield return new WaitForSeconds(1f);
 
+        Charge.SetActive(true);
         ApplyDamageToPlayer(ChainSweepsHitbox, chainSweepsDamage);
 
         yield return new WaitForSeconds(hitboxDuration);
 
         ChainSweepsHitbox.SetActive(false);
+        Charge.SetActive(false);
     }
 
     private IEnumerator WideSweepingStrikes()
@@ -120,7 +123,7 @@ public class Boss1Attack : MonoBehaviour
         WideSweepingStrikes1.SetActive(true);
         TriggerAnimation("WideSweepingStrikes1");
 
-        yield return new WaitForSeconds(damageDelay);
+        yield return new WaitForSeconds(0.7f);
 
         ApplyDamageToPlayer(WideSweepingStrikes1, wideSweepingStrikesDamage);
 
@@ -132,7 +135,7 @@ public class Boss1Attack : MonoBehaviour
         WideSweepingStrikes2.SetActive(true);
         TriggerAnimation("WideSweepingStrikes2");
 
-        yield return new WaitForSeconds(damageDelay);
+        yield return new WaitForSeconds(1);
 
         ApplyDamageToPlayer(WideSweepingStrikes2, wideSweepingStrikesDamage);
 
@@ -146,7 +149,7 @@ public class Boss1Attack : MonoBehaviour
         OverheadSlamsHitbox.SetActive(true);
         TriggerAnimation("OverheadSlams");
 
-        yield return new WaitForSeconds(damageDelay);
+        yield return new WaitForSeconds(0.5f);
 
         ApplyDamageToPlayer(OverheadSlamsHitbox, overheadSlamsDamage);
 

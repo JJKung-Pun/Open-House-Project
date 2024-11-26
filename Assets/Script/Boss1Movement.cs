@@ -12,12 +12,14 @@ public class Boss1Movement : MonoBehaviour
     private bool canMove = true;
     private Boss1HP bossHealth;
     private Animator animator;
+    public bool isTurnRight;
 
     void Start()
     {
         fixedY = transform.position.y;
         bossHealth = GetComponent<Boss1HP>();
         animator = GetComponent<Animator>();
+        isTurnRight = false;
     }
 
     void Update()
@@ -66,6 +68,19 @@ public class Boss1Movement : MonoBehaviour
     {
         Vector3 localScale = transform.localScale;
         localScale.x *= -1;
+
+        if(isTurnRight)
+        {
+            isTurnRight = false;
+            Debug.Log("Left");
+        }
+        else
+        {
+            isTurnRight = true;
+            Debug.Log("Right");
+        }
+
+        
         transform.localScale = localScale;
         
         Debug.Log("Flipped Boss. Now facing " + (transform.localScale.x > 0 ? "right" : "left"));

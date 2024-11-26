@@ -26,13 +26,8 @@ public class PlayerHP : MonoBehaviour
     {
         currentHealth -= damage;
         healthSlider.value = currentHealth;
-
-        // Trigger take damage animation
-        if (animator != null)
-        {
-            animator.SetTrigger("takeDamage");
-        }
-
+        animator.SetTrigger("takeDamage");
+        
         if (currentHealth <= 0)
         {
             Die();

@@ -1173,6 +1173,10 @@ MonoBehaviour:
   attackCooldown: 2
   rangeToPlayer: 0.5
   damageDelay: 2
+  chainSweepsDelay: 1
+  wideSweepingStrikes1Delay: 1.5
+  wideSweepingStrikes2Delay: 1
+  overheadSlamsDelay: 2
 --- !u!95 &1994064601021861878
 Animator:
   serializedVersion: 5
@@ -1203,13 +1207,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 8892219382246098233}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7eca8f506488384ab541fb0d3f60f93, type: 3}
+  m_Script: {fileID: 11500000, guid: 9767dbfc0f826554e8688b9ad1e28fb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
   EnemyDefeated: {fileID: 0}
   enemyHealthBar: {fileID: 0}
+  MainMenu: {fileID: 0}
 --- !u!114 &5519031952964777255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1219,9 +1224,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8892219382246098233}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ab023c2f5231854aafd4c02a532b468, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e43afbe6b6952842b86d606723220ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 3826631668566236169, guid: cdbd39185a5095044903039e1b0d53ae, type: 3}
   speed: 2
   stopDistance: 0.5
