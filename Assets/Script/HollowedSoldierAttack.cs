@@ -81,6 +81,7 @@ public class HollowedSoldierAttack : MonoBehaviour
                 }
             }
         }
+        
 
         // After 1 second, disable the hitbox and make it invisible
         Invoke("DisableHitbox", 1f);  // Hitbox lasts for 1 second
