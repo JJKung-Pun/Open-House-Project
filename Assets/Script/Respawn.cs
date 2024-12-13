@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Respawn : MonoBehaviour
 {
+	public string sceneToLoad = "Level1"; 
    public void RespawnGame()
    {
-	   SceneManager.LoadSceneAsync(2);
+	   SceneManager.LoadSceneAsync(sceneToLoad);
    }
 }

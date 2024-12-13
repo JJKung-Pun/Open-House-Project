@@ -8,6 +8,7 @@ public class Boss1Attack : MonoBehaviour
     public GameObject OverheadSlamsHitbox;
     public GameObject ChainSweepsHitbox;
     public GameObject Charge;
+    public GameObject ChargeP;
     public Animator bossAnimator; // Animator for handling animations
 
     public int wideSweepingStrikesDamage = 35;
@@ -113,6 +114,7 @@ public class Boss1Attack : MonoBehaviour
 
         ChainSweepsHitbox.SetActive(false);
         Charge.SetActive(false);
+        Charge.transform.position = ChargeP.transform.position;
     }
 
     private IEnumerator WideSweepingStrikes()
