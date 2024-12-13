@@ -153,6 +153,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1212606732}
     - target: {fileID: 1724038291954066893, guid: 6d57630a0f6e02c4489582cc63cfbe4a, type: 3}
+      propertyPath: hitboxActiveTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1724038291954066893, guid: 6d57630a0f6e02c4489582cc63cfbe4a, type: 3}
       propertyPath: hitboxSpriteRenderer
       value: 
       objectReference: {fileID: 1212606730}
@@ -200,6 +204,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1189968853}
+    - target: {fileID: 2816851447631548329, guid: 6d57630a0f6e02c4489582cc63cfbe4a, type: 3}
+      propertyPath: attackScript
+      value: 
+      objectReference: {fileID: 520679654}
     - target: {fileID: 3122904662489867826, guid: 6d57630a0f6e02c4489582cc63cfbe4a, type: 3}
       propertyPath: m_Name
       value: Hollowed Soldier (1)
@@ -208,6 +216,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1189968853}
+    - target: {fileID: 7362692916573110540, guid: 6d57630a0f6e02c4489582cc63cfbe4a, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 520679653}
     - target: {fileID: 7362692916573110540, guid: 6d57630a0f6e02c4489582cc63cfbe4a, type: 3}
       propertyPath: currentHealth
       value: 15
@@ -569,6 +581,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &514106816 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1724038291954066893, guid: 6d57630a0f6e02c4489582cc63cfbe4a, type: 3}
+  m_PrefabInstance: {fileID: 1290587217}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514106806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a045d3e42c3ab6c4cb34ecaa4c709d88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &520679644 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3122904662489867826, guid: 6d57630a0f6e02c4489582cc63cfbe4a, type: 3}
@@ -595,6 +618,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &520679654 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1724038291954066893, guid: 6d57630a0f6e02c4489582cc63cfbe4a, type: 3}
+  m_PrefabInstance: {fileID: 91757843}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520679644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a045d3e42c3ab6c4cb34ecaa4c709d88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &604620022
 GameObject:
   m_ObjectHideFlags: 0
@@ -1147,7 +1181,7 @@ PrefabInstance:
     - target: {fileID: 2816851447631548329, guid: 6d57630a0f6e02c4489582cc63cfbe4a, type: 3}
       propertyPath: attackScript
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 514106816}
     - target: {fileID: 3122904662489867826, guid: 6d57630a0f6e02c4489582cc63cfbe4a, type: 3}
       propertyPath: m_Name
       value: Hollowed Soldier
@@ -1160,6 +1194,10 @@ PrefabInstance:
       propertyPath: detectionRange
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 7362692916573110540, guid: 6d57630a0f6e02c4489582cc63cfbe4a, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 514106815}
     - target: {fileID: 7362692916573110540, guid: 6d57630a0f6e02c4489582cc63cfbe4a, type: 3}
       propertyPath: currentHealth
       value: 15

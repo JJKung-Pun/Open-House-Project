@@ -5,37 +5,23 @@ public class HollowedSoldierAttack : MonoBehaviour
     public Transform player;
     public float attackRange = 1f;
     public int damage = 20;
-    public float attackCooldown = 3f;  // Changed to 3 seconds cooldown
-    public BoxCollider2D attackHitbox;  // The BoxCollider2D for the attack hitbox, assigned in the Inspector
-    public SpriteRenderer hitboxSpriteRenderer;  // SpriteRenderer to make the hitbox visible
+    public float attackCooldown = 3f;
+    public float hitboxActiveTime = 1f;  // Duration for which the hitbox is active
+    public BoxCollider2D attackHitbox;
+    public SpriteRenderer hitboxSpriteRenderer;
+    public Animator animator;  // Animator component for triggering attack animations
 
     private float cooldownTimer = 0f;
     private bool isOnCooldown = false;
 
     void Start()
     {
-        if (attackHitbox == null)
-        {
-            Debug.LogError("Attack hitbox is missing. Please assign it in the Inspector.");
-        }
-        if (hitboxSpriteRenderer == null)
-        {
-            // Try to find the SpriteRenderer in the hitbox if not assigned
-            hitboxSpriteRenderer = attackHitbox.GetComponent<SpriteRenderer>();
-        }
-        
-        attackHitbox.enabled = false;  // Initially disable the hitbox
-        if (hitboxSpriteRenderer != null)
-        {
-            hitboxSpriteRenderer.enabled = false;  // Initially make the hitbox invisible
-        }
+        InitializeComponents();
     }
 
     void Update()
     {
         if (player == null || attackHitbox == null) return;
-
-        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
         if (isOnCooldown)
         {
@@ -48,7 +34,7 @@ public class HollowedSoldierAttack : MonoBehaviour
             return;
         }
 
-        if (distanceToPlayer <= attackRange)
+        if (Vector2.Distance(transform.position, player.position) <= attackRange)
         {
             Attack();
             isOnCooldown = true;
@@ -56,41 +42,74 @@ public class HollowedSoldierAttack : MonoBehaviour
         }
     }
 
+    private void InitializeComponents()
+    {
+        if (attackHitbox == null)
+        {
+            Debug.LogError("Attack hitbox is missing. Please assign it in the Inspector.");
+            return;
+        }
+
+        if (hitboxSpriteRenderer == null)
+        {
+            hitboxSpriteRenderer = attackHitbox.GetComponent<SpriteRenderer>();
+        }
+
+        if (animator == null)
+        {
+            animator = GetComponent<Animator>();
+            if (animator == null)
+            {
+                Debug.LogError("Animator is missing. Please assign it in the Inspector or add it to the GameObject.");
+            }
+        }
+
+        attackHitbox.enabled = false;
+        if (hitboxSpriteRenderer != null)
+        {
+            hitboxSpriteRenderer.enabled = false;
+        }
+    }
+
     void Attack()
     {
-        // Enable the attack hitbox (BoxCollider2D) to detect collisions
+        if (animator != null)
+        {
+            animator.SetTrigger("isAttacking");  // Trigger the attack animation
+        }
+
+        if (attackHitbox == null) return;
+
+        // Enable the attack hitbox
         attackHitbox.enabled = true;
 
-        // Make the hitbox visible for 1 second
+        // Make the hitbox visible
         if (hitboxSpriteRenderer != null)
         {
             hitboxSpriteRenderer.enabled = true;
         }
 
-        // Check if the hitbox collides with the player
-        Collider2D[] hitPlayers = Physics2D.OverlapBoxAll(attackHitbox.bounds.center, attackHitbox.bounds.size, 0f);
+        // Detect collision with the player using LayerMask for optimization
+        LayerMask playerLayer = LayerMask.GetMask("Player");
+        Collider2D hit = Physics2D.OverlapBox(attackHitbox.bounds.center, attackHitbox.bounds.size, 0f, playerLayer);
 
-        foreach (Collider2D hit in hitPlayers)
+        if (hit != null && hit.CompareTag("Player"))
         {
-            if (hit.CompareTag("Player"))
-            {
-                PlayerHP playerHealth = hit.GetComponent<PlayerHP>();
-                if (playerHealth != null)
-                {
-                    playerHealth.TakeDamage(damage);
-                }
-            }
+            PlayerHP playerHealth = hit.GetComponent<PlayerHP>();
+            playerHealth?.TakeDamage(damage);
         }
-        
 
-        // After 1 second, disable the hitbox and make it invisible
-        Invoke("DisableHitbox", 1f);  // Hitbox lasts for 1 second
+        // Disable the hitbox after the active time
+        Invoke("DisableHitbox", hitboxActiveTime);
     }
 
     void DisableHitbox()
     {
-        // Disable the attack hitbox and make it invisible
-        attackHitbox.enabled = false;
+        if (attackHitbox != null)
+        {
+            attackHitbox.enabled = false;
+        }
+
         if (hitboxSpriteRenderer != null)
         {
             hitboxSpriteRenderer.enabled = false;
