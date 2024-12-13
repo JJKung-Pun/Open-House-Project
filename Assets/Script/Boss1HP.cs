@@ -28,9 +28,19 @@ public class Boss1HP : MonoBehaviour
         bossAnimator = GetComponent<Animator>();
     }
 
+    /// <summary>
+    /// Apply damage to the boss. Prevents health from dropping below 1.
+    /// </summary>
+    /// <param name="damageAmount">Amount of damage to apply.</param>
     public void Damage(int damageAmount)
     {
         currentHealth -= damageAmount;
+
+        // Prevent health from dropping below 1 during regular attacks
+        if (currentHealth < 1)
+        {
+            currentHealth = 1;
+        }
         UpdateHealthBar();
 
         // Trigger Hurt animation
@@ -39,15 +49,42 @@ public class Boss1HP : MonoBehaviour
             bossAnimator.SetTrigger("Hurt");
         }
 
-        // Handle death if health is 0 or below
+        // Check if health is exactly 1 to stop actions
+        if (currentHealth == 1)
+        {
+            StopAllActions();
+        }
+    }
+
+    /// <summary>
+    /// Directly sets the boss's health to a specific value. Useful for QTE success.
+    /// </summary>
+    /// <param name="newHealth">The new health value to set.</param>
+    public void SetHealth(int newHealth)
+    {
+        currentHealth = newHealth;
+        UpdateHealthBar();
+
         if (currentHealth <= 0)
         {
+            // Trigger death sequence
             StopAllActions();
             if (bossAnimator != null)
             {
                 bossAnimator.SetTrigger("Dead");
             }
             StartCoroutine(HandleDeath());
+        }
+        else if (currentHealth == 1)
+        {
+            // Stop actions if health reaches 1
+            StopAllActions();
+        }
+
+        // Optionally, trigger Hurt animation if damage is taken
+        if (currentHealth > 0 && newHealth < currentHealth && bossAnimator != null)
+        {
+            bossAnimator.SetTrigger("Hurt");
         }
     }
 
@@ -85,6 +122,10 @@ public class Boss1HP : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    /// <summary>
+    /// Heal the boss by a specified amount. Clamps health to maxHealth.
+    /// </summary>
+    /// <param name="healAmount">Amount to heal.</param>
     public void Heal(int healAmount)
     {
         currentHealth += healAmount;
@@ -117,6 +158,12 @@ public class Boss1HP : MonoBehaviour
         if (bossAnimator != null)
         {
             bossAnimator.SetBool("IsAttacking", false);
+        }
+
+        // Optionally, play an idle or warning animation
+        if (bossAnimator != null)
+        {
+            bossAnimator.SetTrigger("Idle"); // Ensure you have an "Idle" trigger in Animator
         }
     }
 }
