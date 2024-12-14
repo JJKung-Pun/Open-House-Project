@@ -340,7 +340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 5
-  sprintSpeed: 10
+  sprintSpeed: 8
   dashSpeed: 15
   stamina: 100
   maxStamina: 100
@@ -376,6 +376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1afaa7f9e7624634aa067a35eeaed32a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackDamage: 3
 --- !u!114 &7708167387716638562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402,6 +403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1115bde94658d554cb2984f481556f07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneToLoad: Level1
 --- !u!114 &118511835917810802
 MonoBehaviour:
   m_ObjectHideFlags: 0
