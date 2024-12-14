@@ -1,4 +1,4 @@
-Library: D:\UTCC Location\Open-House-Project-master\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+Library: C:\Users\21H2\Desktop\Game\PortableGit\AnimationOH\backup7\Open-House-Project\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --platform=Windows
 --backend=burst-llvm-16
 --target=X64_SSE2
@@ -9,10 +9,10 @@ Library: D:\UTCC Location\Open-House-Project-master\Temp\BurstOutput\Data\Plugin
 --target-framework=NetFramework
 --linker-options=PdbAltPath="Open House Project_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=D:\UTCC Location\Open-House-Project-master\Temp\Burst
---key-folder=D:/Unity Hub/2022.3.42f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
---decode-folder=D:\UTCC Location\Open-House-Project-master\Library\Burst
---output=D:\UTCC Location\Open-House-Project-master\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+--temp-folder=C:\Users\21H2\Desktop\Game\PortableGit\AnimationOH\backup7\Open-House-Project\Temp\Burst
+--key-folder=C:/Program Files/Unity/Hub/Editor/2022.3.42f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
+--decode-folder=C:\Users\21H2\Desktop\Game\PortableGit\AnimationOH\backup7\Open-House-Project\Library\Burst
+--output=C:\Users\21H2\Desktop\Game\PortableGit\AnimationOH\backup7\Open-House-Project\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=Unity.Burst.BurstCompiler+BurstCompilerHelper, Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::IsBurstEnabled()--8c2be93e18276203cbd918daa2748a10
@@ -56,10 +56,10 @@ Library: D:\UTCC Location\Open-House-Project-master\Temp\BurstOutput\Data\Plugin
 --target-framework=NetFramework
 --linker-options=PdbAltPath="Open House Project_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=D:\UTCC Location\Open-House-Project-master\Temp\Burst
---key-folder=D:/Unity Hub/2022.3.42f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
---decode-folder=D:\UTCC Location\Open-House-Project-master\Library\Burst
---output=D:\UTCC Location\Open-House-Project-master\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+--temp-folder=C:\Users\21H2\Desktop\Game\PortableGit\AnimationOH\backup7\Open-House-Project\Temp\Burst
+--key-folder=C:/Program Files/Unity/Hub/Editor/2022.3.42f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
+--decode-folder=C:\Users\21H2\Desktop\Game\PortableGit\AnimationOH\backup7\Open-House-Project\Library\Burst
+--output=C:\Users\21H2\Desktop\Game\PortableGit\AnimationOH\backup7\Open-House-Project\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=Unity.Burst.BurstCompiler+BurstCompilerHelper, Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::IsBurstEnabled()--8c2be93e18276203cbd918daa2748a10
